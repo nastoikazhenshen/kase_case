@@ -1,0 +1,67 @@
+{
+  "snapshot_id": "BS3-40698bfc0c453479",
+  "report_id": "BS3-REPORT-8aba4eee2d9d5ac81c10",
+  "delivery": "LOCAL_EVIDENCE_PACK",
+  "files": [
+    {
+      "path": "mvp/mvp_screenshots/activity-1440.png",
+      "bytes": 112897,
+      "sha256": "fae2efbe1669ddbf8c30706251dc909fec0187103e099248c5103b74768dbc19"
+    },
+    {
+      "path": "mvp/mvp_screenshots/concept-1440.png",
+      "bytes": 81968,
+      "sha256": "87617f8f748bc32dcabac8939265fcbd1f31f35896de0ec24cf402cc049fc8d0"
+    },
+    {
+      "path": "mvp/mvp_screenshots/events-1440.png",
+      "bytes": 82973,
+      "sha256": "caa82f930f13e9f12a9267ca53ac690a28b958d7cd4711c3ca1d5e3989c85de8"
+    },
+    {
+      "path": "mvp/mvp_screenshots/instrument-card-1440.png",
+      "bytes": 116799,
+      "sha256": "7aab72ff3a6dd1953edd9e811fc90507c58f511e9a5693ce84dea63bce8b1165"
+    },
+    {
+      "path": "mvp/mvp_screenshots/narrow-420.png",
+      "bytes": 40219,
+      "sha256": "b3da35a6fc2fb6b1e27c7725df1c7f6e714120f86ad5a9294321a190b26b1edb"
+    },
+    {
+      "path": "mvp/mvp_screenshots/overview-1280.png",
+      "bytes": 119344,
+      "sha256": "dbca9535d0c23987aec0eb4023e2e91960ae6c283598e7e3abee82a9aa2770d8"
+    },
+    {
+      "path": "mvp/mvp_screenshots/overview-1440.png",
+      "bytes": 127858,
+      "sha256": "7ba671768c691901937ec482d3abf24b786b699f7a2686bd620bbf108f3859d6"
+    },
+    {
+      "path": "mvp/outputs/workbook_preview0.png",
+      "bytes": 100876,
+      "sha256": "bf347f25c2b351a055621a86525802701f21be1363219281ad362ce124b3fa7e"
+    },
+    {
+      "path": "mvp/outputs/workbook_preview1.png",
+      "bytes": 86398,
+      "sha256": "1a030c3c10544620d18ada44ef8a712f33fc22edace240c981fc8a406d7cfe91"
+    },
+    {
+      "path": "mvp/outputs/workbook_preview2.png",
+      "bytes": 88252,
+      "sha256": "020875c083c4abb439d3ad2ced2551d6fee4baaeccb606beaf68a97d585b8128"
+    },
+    {
+      "path": "mvp/outputs/workbook_preview3.png",
+      "bytes": 93340,
+      "sha256": "74650ebba503f2b854492ba5bf7c1f9bd9047fca5f44dd849eaa24b126a39f68"
+    },
+    {
+      "path": "mvp/outputs/mvp_results.xlsx",
+      "bytes": 12360,
+      "sha256": "8d1f0f457a1afe209b75d299508019ed803da2b51a438f0dc78c55dd761d0506"
+    }
+  ]
+}

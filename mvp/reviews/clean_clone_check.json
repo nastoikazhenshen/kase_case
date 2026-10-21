@@ -1,0 +1,146 @@
+{
+  "candidate_commit": "598f14e13b42b009741e1680e326e958c03b4175",
+  "runtime": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "fresh_venv_pinned_install": true,
+  "snapshot_id": "BS3-40698bfc0c453479",
+  "report_id": "BS3-REPORT-8aba4eee2d9d5ac81c10",
+  "pack_sha256": "5e3902f2decb1aaf29f1f2a20ce8a09f7caadb304dc1e12704244db3d68c9bec",
+  "report_identical_to_development": true,
+  "status": "PASS_WITH_DOCUMENTED_LOCAL_EVIDENCE_DEPENDENCY",
+  "checks": [
+    {
+      "label": "commit",
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "result_tail": "598f14e13b42b009741e1680e326e958c03b4175\n"
+    },
+    {
+      "label": "runtime",
+      "command": [
+        "<clean-clone>\\mvp\\.venv\\Scripts\\python.exe",
+        "-c",
+        "import sys; print(sys.version)"
+      ],
+      "exit_code": 0,
+      "result_tail": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]\n"
+    },
+    {
+      "label": "public_clone",
+      "command": [
+        "<clean-clone>\\mvp\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-c",
+        "from pathlib import Path; from streamlit.testing.v1 import AppTest; assert not Path('mvp/data/processed/snapshot.json').exists(); app=AppTest.from_file('mvp/src/app.py').run(); assert not app.exception; assert 'пакет доказательств не найден' in app.info[0].value; print('PASS: public-clone missing-pack state')"
+      ],
+      "exit_code": 0,
+      "result_tail": "PASS: public-clone missing-pack state\n2026-10-22 03:26:21.743 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n"
+    },
+    {
+      "label": "restore",
+      "command": [
+        "<clean-clone>\\mvp\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "mvp/scripts/restore_evidence.py",
+        "<development-repo>\\mvp\\local_pack\\bondscope-evidence.zip"
+      ],
+      "exit_code": 0,
+      "result_tail": "{\"verified_files\": 149, \"written_files\": 149, \"snapshot_sha256\": \"40698bfc0c45347981e358e9fee4d80a88b8f90e8f3f27dd78182035bbddbc64\", \"snapshot_id\": \"BS3-40698bfc0c453479\"}\n"
+    },
+    {
+      "label": "idempotent_restore",
+      "command": [
+        "<clean-clone>\\mvp\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "mvp/scripts/restore_evidence.py",
+        "<development-repo>\\mvp\\local_pack\\bondscope-evidence.zip"
+      ],
+      "exit_code": 0,
+      "result_tail": "{\"verified_files\": 149, \"written_files\": 0, \"snapshot_sha256\": \"40698bfc0c45347981e358e9fee4d80a88b8f90e8f3f27dd78182035bbddbc64\", \"snapshot_id\": \"BS3-40698bfc0c453479\"}\n"
+    },
+    {
+      "label": "build",
+      "command": [
+        "<clean-clone>\\mvp\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "mvp.src.build_snapshot"
+      ],
+      "exit_code": 0,
+      "result_tail": "{\n  \"snapshot_id\": \"BS3-40698bfc0c453479\",\n  \"snapshot_sha256\": \"40698bfc0c45347981e358e9fee4d80a88b8f90e8f3f27dd78182035bbddbc64\",\n  \"status\": \"PARTIAL — EXTERNAL DATA BLOCKER\",\n  \"selection_policy\": \"Legacy dated snapshots retained unchanged; fresh API revisions are separately archived and reconciled. Valuations and full notice added as context.\",\n  \"limitations\": [\n    \"Активная ценовая вкладка не доказана: KASE WAF блокирует браузер до появления контролов.\",\n    \"Два снимка не являются историей: нет 10 сопоставимых предыдущих наблюдений.\",\n    \"Снимки не сертифицированы как окончательные итоги дня.\",\n    \"Часовой пояс публикации не указан: событие доступно со следующего дня +05:00.\",\n    \"Публичное распространение материалов KASE требует письменного разрешения; рыночный пакет хранится локально.\"\n  ]\n}\n"
+    },
+    {
+      "label": "export",
+      "command": [
+        "<clean-clone>\\mvp\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "mvp/scripts/export_report.py"
+      ],
+      "exit_code": 0,
+      "result_tail": "BS3-REPORT-8aba4eee2d9d5ac81c10\n"
+    },
+    {
+      "label": "source_reconciliation",
+      "command": [
+        "<clean-clone>\\mvp\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "mvp/scripts/reconcile_sources.py"
+      ],
+      "exit_code": 0,
+      "result_tail": "{\"snapshot_id\": \"BS3-40698bfc0c453479\", \"checks\": 50, \"outcomes\": {\"MATCH\": 45, \"WITHIN_DISPLAY_ROUNDING\": 4, \"NEW_EXPLICIT_ZERO_OLD_MISSING\": 1, \"DIFFERENCE\": 0}, \"interpretation\": \"Field consistency only. No proof of same selected mode, price view or EOD; original observations unchanged.\", \"revision_difference\": \"HCBNb19 old table turnover missing; new API explicitly zero with zero trades. Both retained separately; unknown mode prevents promotion into canonical observations.\", \"local_details\": \"mvp/data/processed/revision_reconciliation.csv\"}\n"
+    },
+    {
+      "label": "runtime_tests",
+      "command": [
+        "<clean-clone>\\mvp\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "mvp/tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "result_tail": "rtSecurityTests.test_spreadsheet_formula_strings_are_neutralized) ... ok\ntest_csv_and_report_evaluation_parity (test_repository_reports.RealSourceE2ETests.test_csv_and_report_evaluation_parity) ... ok\ntest_csv_context_and_provenance_match_json_on_both_event_dates (test_repository_reports.RealSourceE2ETests.test_csv_context_and_provenance_match_json_on_both_event_dates) ... ok\ntest_html_escapes_source_strings (test_repository_reports.RealSourceE2ETests.test_html_escapes_source_strings) ... ok\ntest_real_offline_rounding_and_independent_ratio (test_repository_reports.RealSourceE2ETests.test_real_offline_rounding_and_independent_ratio) ... ok\ntest_real_source_gates_and_mode_dates_preserved (test_repository_reports.RealSourceE2ETests.test_real_source_gates_and_mode_dates_preserved) ... ok\ntest_report_is_immutable_and_filter_changes_identifier (test_repository_reports.RealSourceE2ETests.test_report_is_immutable_and_filter_changes_identifier) ... ok\ntest_scope_grain_registry_corruption_rejected (test_repository_reports.RealSourceE2ETests.test_scope_grain_registry_corruption_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 47 tests in 2.952s\n\nOK\n"
+    },
+    {
+      "label": "archive_tests",
+      "command": [
+        "<clean-clone>\\mvp\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "mvp/data/raw/archive/verification/tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "result_tail": "7_modes_only_four_matching_rows) ... ok\ntest_08_no_mode_backfill (test_verification.VerificationTests.test_08_no_mode_backfill) ... ok\ntest_09_missing_is_not_zero (test_verification.VerificationTests.test_09_missing_is_not_zero) ... ok\ntest_10_no_aggregate_rows (test_verification.VerificationTests.test_10_no_aggregate_rows) ... ok\ntest_11_unique_grain (test_verification.VerificationTests.test_11_unique_grain) ... ok\ntest_12_price_gate_blocks (test_verification.VerificationTests.test_12_price_gate_blocks) ... ok\ntest_13_insufficient_history (test_verification.VerificationTests.test_13_insufficient_history) ... ok\ntest_14_publication_not_payment_time (test_verification.VerificationTests.test_14_publication_not_payment_time) ... ok\ntest_15_currency_scope (test_verification.VerificationTests.test_15_currency_scope) ... ok\ntest_16_turnover_scale (test_verification.VerificationTests.test_16_turnover_scale) ... ok\ntest_17_percentage_scale (test_verification.VerificationTests.test_17_percentage_scale) ... ok\ntest_18_launch_cost (test_verification.VerificationTests.test_18_launch_cost) ... ok\n\n----------------------------------------------------------------------\nRan 18 tests in 0.043s\n\nOK\n"
+    },
+    {
+      "label": "populated_app",
+      "command": [
+        "<clean-clone>\\mvp\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-c",
+        "from unittest.mock import patch; from streamlit.testing.v1 import AppTest; from mvp.src.repository import load_snapshot; s=load_snapshot(); app=AppTest.from_file('mvp/src/app.py',default_timeout=20).run(); assert not app.exception; assert len(app.metric)==4; assert any(s['release']['snapshot_id'] in x.value for x in app.caption); print('PASS: populated real-data app in isolated clone')"
+      ],
+      "exit_code": 0,
+      "result_tail": "PASS: populated real-data app in isolated clone\n2026-10-22 03:26:31.633 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n"
+    }
+  ]
+}

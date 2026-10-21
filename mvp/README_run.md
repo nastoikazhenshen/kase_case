@@ -14,7 +14,7 @@ mvp/.venv/Scripts/python.exe -m pip install -r mvp/requirements.lock.txt
 mvp/.venv/Scripts/python.exe mvp/scripts/restore_evidence.py "путь/к/bondscope-evidence.zip"
 mvp/.venv/Scripts/python.exe -m mvp.src.build_snapshot
 mvp/.venv/Scripts/python.exe mvp/scripts/export_report.py
-mvp/.venv/Scripts/python.exe -m streamlit run mvp/src/app.py
+mvp/.venv/Scripts/python.exe -m streamlit run mvp/src/app.py --server.address 127.0.0.1 --browser.gatherUsageStats false
 ```
 
 `restore_evidence.py` проверяет все пути, типы файлов, размеры и SHA-256 до первой записи. Он отклоняет symlink/path traversal/Windows aliases, посторонние каталоги и отличающиеся существующие файлы. Одинаковые файлы допускают повторное восстановление. Обрабатывается только формат `BS3-local-evidence-1`, а не исходные ZIP из стартового комплекта. Код проекта и настройки из пакета не извлекаются.

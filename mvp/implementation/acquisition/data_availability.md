@@ -3,7 +3,7 @@
 This is a bounded public-source recovery record. It does not assert that an
 unreturned KASE field or page does not exist.
 
-| Instrument | ISIN | Dated trade row recovered | Usable daily-history count | Mode proved for this observation | Active clean-price selection proved | Official valuation in current response | Result |
+| Instrument | ISIN | Dated trade row recovered | Published daily rows (not eligible history) | Mode proved for this observation | Active clean-price selection proved | Official valuation in current response | Result |
 |---|---|---|---:|---|---|---|---|
 | BIGDb5 | KZ2D00012861 | 2026-10-21 | 1 | no | no | 2026-10-19, 20, 21 | daily display only; no rolling rule |
 | CLSGb11 | KZ2P00016504 | 2026-10-21 | 1 | no | no | absent | daily display only; event recovered |
@@ -16,6 +16,8 @@ null trade fields and a `From …` cumulative summary. The null current row is
 not an end-of-day observation; the aggregate is not a daily observation and is
 excluded. One prior dated row is below both the minimum `n=10` and target
 `N=20` comparable-observation requirements.
+Eligible prior history is zero for every instrument; a dated row count is not a
+comparable historical sample count.
 
 The response does not supply a trading-board/mode field. No mode is inferred
 from the prior archive or from a ticker's current page. The response supplies

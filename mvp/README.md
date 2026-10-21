@@ -20,7 +20,7 @@ mvp/.venv/Scripts/python.exe -m pip install -r mvp/requirements.lock.txt
 mvp/.venv/Scripts/python.exe mvp/scripts/restore_evidence.py "путь/к/bondscope-evidence.zip"
 mvp/.venv/Scripts/python.exe -m mvp.src.build_snapshot
 mvp/.venv/Scripts/python.exe mvp/scripts/export_report.py
-mvp/.venv/Scripts/python.exe -m streamlit run mvp/src/app.py
+mvp/.venv/Scripts/python.exe -m streamlit run mvp/src/app.py --server.address 127.0.0.1 --browser.gatherUsageStats false
 ```
 
 Команда `restore_evidence.py` проверяет манифест, хеши, допустимые пути и совпадение релиза; не заменяет отличающиеся существующие файлы. Допустимы только локальные доказательства, производные данные, отчёты и скриншоты внутри `mvp/`. Пакет текущей поставки: `mvp/local_pack/bondscope-evidence.zip`; его публичный паспорт — [local_pack_manifest.json](implementation/local_pack_manifest.json). Пакет не входит в Git. Без него интерфейс показывает явное состояние отсутствующих доказательств; сборка и экспорт завершаются ошибкой.
