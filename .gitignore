@@ -1,0 +1,18 @@
+# Machine local and secrets
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.DS_Store
+.ipynb_checkpoints/
+.idea/
+.vscode/
+*.log
+*.tmp
+# Large/sensitive raw files by default; explicitly review public exports before committing
+mvp/data/private/
+mvp/data/licensed/
+mvp/data/raw/
