@@ -1,0 +1,20 @@
+# Cross-team handoff board
+
+## Status
+- Member 1 (Market): not yet handed off.
+- Member 2 (MVP): not yet handed off.
+- Member 3 (Finance): draft financial scenarios only; assumptions unvalidated.
+
+## Required format for each handoff
+**Date; owner; file/PR link; competition question; claim; type [FACT/CALCULATION/ASSUMPTION]; supporting URL and retrieved date; units; formula if applicable; limitations; receiving owner.**
+
+## Member 1 → 3
+Provide source-backed TAM/SAM/SOM, customer role and payer, KASE product comparisons, tariff references and adoption assumptions. Do not treat total KASE members as all purchasable clients.
+
+## Member 2 → 3
+Provide verified source files/links, chosen metrics and formulas, charts with exact units and date range, MVP screenshot, technical roadmap and costs.
+
+## Member 3 → 1 and 2
+Communicate finance constraints, feasible license price ranges, MVP cutline and presentation data requests. Maintain single source of truth for subscription and client forecasts.
+
+**Never mark a handoff completed until a real file/PR is linked.**
