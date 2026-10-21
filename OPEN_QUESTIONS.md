@@ -12,3 +12,7 @@
 | Q-08 | Which team name and submission language were registered? | Whole team | Final submission |
 
 Blockers go here instead of inventing answers.
+
+| Q-09 | Public clean-price control/date-mode proof and ≥10 comparable previous final observations remain unavailable after WAF/SSR/observed-API attempts. Which permitted export can close the gap? [Evidence](mvp/data_availability_report.md) | Member 2 with source owner | Before enabling price/history signals |
+| Q-10 | Written redistribution permission and exact event publication timezone remain unconfirmed. Local evidence pack is not public Git. | Members 1–2 | Before broader data delivery |
+| Q-11 | Align current 8/10-client workbook with earlier 4/6 branch narrative and tax/cost wording; proposed cell corrections are [handed off](mvp/handoff/finance_consistency.md). | Member 3 | Final financial slides |

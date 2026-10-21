@@ -1,0 +1,16 @@
+{
+  "url": "http://127.0.0.1:8501",
+  "offline_policy": "all non-localhost browser requests aborted",
+  "checks": [
+    "populated overview rendered at 1440px",
+    "instrument card shows valuation and rule context",
+    "activity snapshot rendered without historical chart",
+    "21 October event context is empty and caveat rendered",
+    "future concept explicitly labeled",
+    "keyboard navigation lands on an interactive focus target",
+    "illustrative 100000 KZT input produces typed CSV/JSON parity for evaluations, events, and valuations",
+    "event availability changes from absent on 21 October to loaded source-backed event on 22 October",
+    "responsive layouts captured at 1280px and 420px"
+  ],
+  "errors": []
+}

@@ -1,0 +1,123 @@
+{
+  "schema_version": "kase-public-recovery-1.0",
+  "recovery_date_utc": "2026-10-21",
+  "raw_evidence_manifest": "evidence_manifest.json",
+  "raw_evidence_local_path": "mvp/data/raw/acquisition/2026-10-22",
+  "redistribution_status": "LOCAL_ONLY_PENDING_WRITTEN_KASE_PERMISSION",
+  "instruments": [
+    {
+      "ticker": "BIGDb5",
+      "isin": "KZ2D00012861",
+      "daily_dates": [
+        "2026-10-21"
+      ],
+      "trading_mode": null,
+      "price_view_status": "BLOCKED_PRICE_VIEW",
+      "valuation_dates": [
+        "2026-10-19",
+        "2026-10-20",
+        "2026-10-21"
+      ],
+      "published_daily_count": 1,
+      "comparable_prior_history_count": 0
+    },
+    {
+      "ticker": "CLSGb11",
+      "isin": "KZ2P00016504",
+      "daily_dates": [
+        "2026-10-21"
+      ],
+      "trading_mode": null,
+      "price_view_status": "BLOCKED_PRICE_VIEW",
+      "valuation_dates": [],
+      "event_id": "EV_CLSGb11_20261021_COUPON",
+      "published_daily_count": 1,
+      "comparable_prior_history_count": 0
+    },
+    {
+      "ticker": "CLSGb15",
+      "isin": "KZ2P00016744",
+      "daily_dates": [
+        "2026-10-21"
+      ],
+      "trading_mode": null,
+      "price_view_status": "BLOCKED_PRICE_VIEW",
+      "valuation_dates": [],
+      "published_daily_count": 1,
+      "comparable_prior_history_count": 0
+    },
+    {
+      "ticker": "MFKMb10",
+      "isin": "KZ2C00018034",
+      "daily_dates": [
+        "2026-10-21"
+      ],
+      "trading_mode": null,
+      "price_view_status": "BLOCKED_PRICE_VIEW",
+      "valuation_dates": [
+        "2026-10-19",
+        "2026-10-20",
+        "2026-10-21"
+      ],
+      "published_daily_count": 1,
+      "comparable_prior_history_count": 0
+    },
+    {
+      "ticker": "HCBNb19",
+      "isin": "KZ2C00014124",
+      "daily_dates": [
+        "2026-10-21"
+      ],
+      "trading_mode": null,
+      "price_view_status": "BLOCKED_PRICE_VIEW",
+      "valuation_dates": [
+        "2026-10-19",
+        "2026-10-20",
+        "2026-10-21"
+      ],
+      "sparse_trade_fields": true,
+      "published_daily_count": 1,
+      "comparable_prior_history_count": 0
+    }
+  ],
+  "trade_info_schema": [
+    "period",
+    "date0",
+    "high",
+    "low",
+    "average_price",
+    "dirty_high",
+    "dirty_low",
+    "dirty_average_price",
+    "bid",
+    "dirty_bid",
+    "offer",
+    "dirty_offer",
+    "price",
+    "dirty_price",
+    "bid_income",
+    "offer_income",
+    "last_income",
+    "high_income",
+    "low_income",
+    "average_income",
+    "deals_count",
+    "volume",
+    "volume_kzt",
+    "volume_usd"
+  ],
+  "event": {
+    "source_url": "https://kase.kz/ru/information/news/show/1578268",
+    "instrument_id": "KZ2P00016504",
+    "ticker": "CLSGb11",
+    "event_type": "COUPON_PAYMENT_REPORTED",
+    "event_date": "2026-10-19",
+    "published_local_text": "2026-10-21 12:20",
+    "publication_timezone": "UNPRINTED; Asia/Almaty assumption must remain visible"
+  },
+  "blockers": [
+    "KASE WAF Attack ID 20000051 blocked headless Chrome before instrument clean-price and daily corporate-bond controls rendered.",
+    "Daily-results SSR exposed a bonds selector but default shares payload only; corporate-bond endpoint/date parameters were not observed and were not guessed.",
+    "No active clean-price selection, date-specific mode, or 10+ comparable daily observations was recovered."
+  ]
+}

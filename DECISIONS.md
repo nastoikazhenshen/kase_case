@@ -10,3 +10,7 @@
 | D-06 | Final slides: cover + up to 10 content slides, recommendation first | Required | Member 3 |
 
 Add new decisions with date, owner, reason and source. Do not silently rewrite existing agreements.
+
+| D-07 (2026-10-22) | Participant 2 uses Python/Streamlit, immutable local evidence and separate explicit collection; no runtime paid service | Implemented; [run guide](mvp/README_run.md) | Member 2 |
+| D-08 (2026-10-22) | Preserve price-view, date-mode and historical-finality gates until matching evidence exists; do not convert two days into a historical baseline | [Acquisition evidence](mvp/implementation/acquisition/acquisition_log.md), partial external blocker | Member 2 |
+| D-09 (2026-10-22) | Public Git excludes third-party raw/processed data, workbooks and screenshots while redistribution rights are unresolved; local pack is separate | [Delivery boundary](mvp/evidence.md) | Member 2 |

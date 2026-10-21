@@ -1,0 +1,13 @@
+{
+  "snapshot_id": "BS3-40698bfc0c453479",
+  "checks": 50,
+  "outcomes": {
+    "MATCH": 45,
+    "WITHIN_DISPLAY_ROUNDING": 4,
+    "NEW_EXPLICIT_ZERO_OLD_MISSING": 1,
+    "DIFFERENCE": 0
+  },
+  "interpretation": "Field consistency only. No proof of same selected mode, price view or EOD; original observations unchanged.",
+  "revision_difference": "HCBNb19 old table turnover missing; new API explicitly zero with zero trades. Both retained separately; unknown mode prevents promotion into canonical observations.",
+  "local_details": "mvp/data/processed/revision_reconciliation.csv"
+}

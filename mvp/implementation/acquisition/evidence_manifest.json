@@ -1,0 +1,109 @@
+[
+  {
+    "artifact": "daily-results.html",
+    "bytes": 241912,
+    "retrieved_at_utc": "2026-10-21T21:50:56Z",
+    "retrieval_timestamp_status": "SERVER_DATE_FROM_SSR_RESPONSE; not filesystem mtime",
+    "sha256": "1b7d49604e9f10524fbad06590647fa193286f6be0f4c728efd6b767ae1e6aa6",
+    "source_url": "https://kase.kz/ru/information/trading-results/daily",
+    "type": "anonymous public SSR HTML; default shares, bonds selector visible but inactive"
+  },
+  {
+    "artifact": "BIGDb5.html",
+    "bytes": 334510,
+    "retrieved_at_utc": "2026-10-21T21:44:49Z",
+    "retrieval_timestamp_status": "SERVER_DATE_FROM_SSR_RESPONSE; not filesystem mtime",
+    "sha256": "82070d9806ac424e07078a66de8155a5c743064a15d6c683f30539d21e538a9a",
+    "source_url": "https://kase.kz/ru/investors/bonds/BIGDb5",
+    "type": "anonymous public SSR HTML"
+  },
+  {
+    "artifact": "BIGDb5.trade-info.json",
+    "bytes": 1488,
+    "retrieved_at_utc": "2026-10-21T21:45:31Z",
+    "retrieval_timestamp_status": "SERVER_DATE_FROM_TRAILING_SLASH_ROUTE_CHECK; raw file was written later",
+    "sha256": "d70749980297449fdf361b92481a75d22b770ce03eac022c9e28a628b8494ff7",
+    "source_url": "https://kase.kz/api/instruments/trade-info/BIGDb5/",
+    "type": "observed anonymous public API response"
+  },
+  {
+    "artifact": "CLSGb11.trade-info.json",
+    "bytes": 1580,
+    "retrieval_timestamp_status": "NOT_CAPTURED_DURING_INITIAL_FETCH; filesystem mtime is storage metadata, not retrieval time",
+    "sha256": "0bf32cd91e51efcb0fb2e049d2ebde24a0bf0cbd43b36260ae3af14d9b7b23a2",
+    "source_url": "https://kase.kz/api/instruments/trade-info/CLSGb11/",
+    "type": "observed anonymous public API response"
+  },
+  {
+    "artifact": "CLSGb15.trade-info.json",
+    "bytes": 1616,
+    "retrieval_timestamp_status": "NOT_CAPTURED_DURING_INITIAL_FETCH; filesystem mtime is storage metadata, not retrieval time",
+    "sha256": "183ff0fd846880f91bf7ad5b221bd479991b350736ee9d6e0bf4c33f9706adbd",
+    "source_url": "https://kase.kz/api/instruments/trade-info/CLSGb15/",
+    "type": "observed anonymous public API response"
+  },
+  {
+    "artifact": "MFKMb10.trade-info.json",
+    "bytes": 1596,
+    "retrieval_timestamp_status": "NOT_CAPTURED_DURING_INITIAL_FETCH; filesystem mtime is storage metadata, not retrieval time",
+    "sha256": "228f5e23479176a2e42f9917e2e7b37110f081d314df08d6406c42d2788805b7",
+    "source_url": "https://kase.kz/api/instruments/trade-info/MFKMb10/",
+    "type": "observed anonymous public API response"
+  },
+  {
+    "artifact": "HCBNb19.trade-info.json",
+    "bytes": 1478,
+    "retrieval_timestamp_status": "NOT_CAPTURED_DURING_INITIAL_FETCH; filesystem mtime is storage metadata, not retrieval time",
+    "sha256": "a201b7d83c3ad5e7d16e3b5ca869b030b57420a5515f3adfe0d67e3fa497d692",
+    "source_url": "https://kase.kz/api/instruments/trade-info/HCBNb19/",
+    "type": "observed anonymous public API response"
+  },
+  {
+    "artifact": "market-valuations.json",
+    "bytes": 360676,
+    "retrieved_at_utc": "2026-10-21T21:44:54Z",
+    "retrieval_timestamp_status": "SERVER_DATE_FROM_SSR_RESPONSE; raw file was written later",
+    "sha256": "d1d7e5917fdf24fad16734c41fdf026f58b51027763e9d2b7c4391977c8f8c16",
+    "source_url": "https://kase.kz/api/indicators/market-valuations/",
+    "type": "observed anonymous public API response"
+  },
+  {
+    "artifact": "CLSGb11-event-1578268.html",
+    "bytes": 121623,
+    "retrieved_at_utc": "2026-10-21T21:45:40Z",
+    "retrieval_timestamp_status": "SERVER_DATE_FROM_SSR_RESPONSE; not filesystem mtime",
+    "sha256": "08714a7579a2caf6aa315a3f1ecdaa826f0382097447826f40a95a320d96358e",
+    "source_url": "https://kase.kz/ru/information/news/show/1578268",
+    "type": "anonymous public SSR HTML; full notice"
+  },
+  {
+    "artifact": "BIGDb5.before-selection.png",
+    "bytes": 24873,
+    "retrieval_timestamp_status": "NOT_CAPTURED_IN_MANIFEST; browser-blocker artifact only",
+    "sha256": "b9c26697705fea659f8bb5c5c84a4a60f5b57f9f2314dbb30306c8d48e6b63d9",
+    "source_url": "https://kase.kz/ru/investors/bonds/BIGDb5",
+    "type": "headless Chrome browser evidence: KASE WAF block page"
+  },
+  {
+    "artifact": "revisions/2026-10-22/market-valuations.reverified.json",
+    "bytes": 360676,
+    "retrieval_started_at_utc": "2026-10-21T21:58:57.7975936Z",
+    "retrieval_completed_at_utc": "2026-10-21T21:58:58.1352530Z",
+    "retrieval_timestamp_status": "COLLECTOR_CLOCK_UTC; separate revalidation revision",
+    "sha256": "d1d7e5917fdf24fad16734c41fdf026f58b51027763e9d2b7c4391977c8f8c16",
+    "source_url": "https://kase.kz/api/indicators/market-valuations/",
+    "type": "observed anonymous public API response; revalidated separate revision",
+    "supersedes": "market-valuations.json"
+  },
+  {
+    "artifact": "revisions/2026-10-22/CLSGb11-event-1578268.reverified.html",
+    "bytes": 121651,
+    "retrieval_started_at_utc": "2026-10-21T21:59:06.1891198Z",
+    "retrieval_completed_at_utc": "2026-10-21T21:59:06.5431045Z",
+    "retrieval_timestamp_status": "COLLECTOR_CLOCK_UTC; separate revalidation revision",
+    "sha256": "7057544569610f476e71182a4776ceb213e327770b24c296be8193247177e108",
+    "source_url": "https://kase.kz/ru/information/news/show/1578268",
+    "type": "anonymous public SSR HTML; full notice revalidated separate revision",
+    "supersedes": "CLSGb11-event-1578268.html"
+  }
+]

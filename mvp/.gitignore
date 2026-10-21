@@ -1,0 +1,13 @@
+.venv/
+data/raw/
+data/private/
+outputs/*
+!outputs/README.md
+__pycache__/
+*.pyc
+.ruff_cache/
+data/processed/
+mvp_screenshots/*.png
+scripts/node_modules/
+local_pack/
+local_validation/

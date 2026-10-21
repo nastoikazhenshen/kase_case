@@ -1,0 +1,9 @@
+# TEMPLATE ONLY. Merge into the project's .codex/config.toml after checking the
+# installed Codex schema. Do not overwrite existing settings or global config.
+# Keep the primary session on the Astra model selected by the user.
+# This file intentionally does NOT set sandbox/approval/network permissions.
+[agents]
+enabled = true
+max_concurrent_threads_per_session = 3
+default_subagent_model = "gpt-5.6-terra"
+default_subagent_reasoning_effort = "medium"

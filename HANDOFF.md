@@ -18,3 +18,14 @@ Provide verified source files/links, chosen metrics and formulas, charts with ex
 Communicate finance constraints, feasible license price ranges, MVP cutline and presentation data requests. Maintain single source of truth for subscription and client forecasts.
 
 **Never mark a handoff completed until a real file/PR is linked.**
+
+## 2026-10-22 — Member 2 → Members 1 and 3
+
+Participant 2 delivered the local real-data prototype and [technical handoff](mvp/handoff/technical_delivery.md)
+on `feature/data-mvp`. FACT: five instruments/two retained dates, nine official
+valuation records and one recovered full notice. CALCULATION: reproducible daily
+context with KZT/ratio units; [formulas](mvp/metrics_dictionary.md).
+ASSUMPTION: thresholds and future IRIS integration. [Sources and retrieval evidence](mvp/source_registry.md),
+[data limits](mvp/handoff/data_limits.md), [scenario-version/cell corrections for Member 3](mvp/handoff/finance_consistency.md).
+Market evidence/screenshots/XLSX remain in a separate local package pending reuse rights;
+public Git contains code/manifests. Historical and price-view gates remain open.

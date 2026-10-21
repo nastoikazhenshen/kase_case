@@ -1,0 +1,17 @@
+{
+  "snapshot_id": "BS3-40698bfc0c453479",
+  "snapshot_sha256": "40698bfc0c45347981e358e9fee4d80a88b8f90e8f3f27dd78182035bbddbc64",
+  "status": "PARTIAL — EXTERNAL DATA BLOCKER",
+  "selection_policy": "Legacy dated snapshots retained unchanged; fresh API revisions are separately archived and reconciled. Valuations and full notice added as context.",
+  "limitations": [
+    "Активная ценовая вкладка не доказана: KASE WAF блокирует браузер до появления контролов.",
+    "Два снимка не являются историей: нет 10 сопоставимых предыдущих наблюдений.",
+    "Снимки не сертифицированы как окончательные итоги дня.",
+    "Часовой пояс публикации не указан: событие доступно со следующего дня +05:00.",
+    "Публичное распространение материалов KASE требует письменного разрешения; рыночный пакет хранится локально."
+  ],
+  "observation_count": 10,
+  "instrument_count": 5,
+  "valuation_count": 9,
+  "event_count": 1
+}

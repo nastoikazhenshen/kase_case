@@ -1,0 +1,15 @@
+{
+  "method_version": "BS3-1.0",
+  "hypothesis": true,
+  "window": 20,
+  "minimum_n": 10,
+  "thresholds": {
+    "price_gap_pct": 0.5,
+    "range_pct": 1.0,
+    "turnover_ratio": 3.0,
+    "trades_ratio": 3.0,
+    "trade_size_to_turnover": 0.25,
+    "planned_amount_to_observed_daily_turnover": 0.25
+  },
+  "rationale": "Демонстрационные гипотезы для ручной проверки: 0,5% расхождение последней и средневзвешенной цены; 1% диапазон; 3-кратная активность; операция 25% наблюдаемого оборота. Не калиброваны на названные выпуски, не рыночная норма и не прогноз исполнимости."
+}

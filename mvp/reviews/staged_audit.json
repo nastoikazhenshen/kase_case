@@ -1,0 +1,7 @@
+{
+  "staged_files": 71,
+  "scope": "mvp implementation, additive root handoffs, reviewed project .codex only",
+  "raw_binary_private_paths": false,
+  "credential_pattern_matches": [],
+  "note": "Targeted pattern and path scan, not a claim of exhaustive secret detection."
+}

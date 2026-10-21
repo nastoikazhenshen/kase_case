@@ -1,5 +1,34 @@
-# Member 2 — Public-data demonstrator
+# KASE BondScope MVP
 
-Work in `feature/data-mvp`. Verify an actual public KASE corporate-bond dataset before implementing metrics.
+Конкурсный офлайн-прототип анализа корпоративных облигаций KASE. Он работает только с локальным неизменяемым снимком и не является инвестиционной рекомендацией.
 
-Deliver reproducible code, `requirements.txt`, source registry, accurate figures, report card/mockup, and evidence of running. Never invent trade observations or use contracted data. Follow `docs/contracts/participant_2.md`.
+## Что фактически поставлено
+
+В локальном evidence-pack есть пять целевых выпусков и 10 архивных дневных строк за 20–21 октября 2026 года. Новые ответы публичного API хранятся отдельными ревизиями: по одной опубликованной предыдущей дневной строке на выпуск; они не подменяют архивные канонические строки. Добавлен контекст из 9 строк официальной рыночной оценки (3 выпуска × 3 даты) и одного полного сообщения CLSGb11.
+
+Статус снимка — `PARTIAL — EXTERNAL DATA BLOCKER`. Для ценовых правил нет доказательства активной clean-price вкладки, а для части дат нет подтверждённого режима торгов. Для исторических правил нет минимум 10 сопоставимых предыдущих финальных наблюдений. Поэтому эти правила показывают причину блокировки, а не вычисленный сигнал.
+
+Подробности: [доступность данных](data_availability_report.md), [доказательства](evidence.md), [реестр источников](source_registry.md), [ограничения для передачи](handoff/data_limits.md).
+
+## Быстрый запуск
+
+Проверено на Python 3.12.14 и Streamlit 1.66.1. Нужен локальный evidence-pack. Установка выполняется по зафиксированному набору пакетов:
+
+```powershell
+py -3.12 -m venv mvp/.venv
+mvp/.venv/Scripts/python.exe -m pip install -r mvp/requirements.lock.txt
+mvp/.venv/Scripts/python.exe mvp/scripts/restore_evidence.py "путь/к/bondscope-evidence.zip"
+mvp/.venv/Scripts/python.exe -m mvp.src.build_snapshot
+mvp/.venv/Scripts/python.exe mvp/scripts/export_report.py
+mvp/.venv/Scripts/python.exe -m streamlit run mvp/src/app.py
+```
+
+Команда `restore_evidence.py` проверяет манифест, хеши, допустимые пути и совпадение релиза; не заменяет отличающиеся существующие файлы. Допустимы только локальные доказательства, производные данные, отчёты и скриншоты внутри `mvp/`. Пакет текущей поставки: `mvp/local_pack/bondscope-evidence.zip`; его публичный паспорт — [local_pack_manifest.json](implementation/local_pack_manifest.json). Пакет не входит в Git. Без него интерфейс показывает явное состояние отсутствующих доказательств; сборка и экспорт завершаются ошибкой.
+
+Автоматическое получение новых данных не требуется для офлайн-демо. CLI `python -m mvp.src.acquisition` — отдельная контролируемая операция с фиксированным allowlist KASE, кэшем и ограниченной повторной попыткой; он не должен использоваться для обхода WAF или для изменения канонического снимка.
+
+## Публичный репозиторий и локальные файлы
+
+Публичный клон содержит код, документацию, манифесты и правила. В нём намеренно нет сторонних raw-ответов, архивных рабочих книг, обработанных рыночных таблиц, HTML/CSV/XLSX отчётов и скриншотов. Они игнорируются Git и остаются в отдельном локальном evidence-pack до проверки прав на распространение материалов KASE.
+
+Технические контракты: [движок](implementation/ENGINE_CONTRACT.md), [UI](implementation/UI_CONTRACT.md), [известные ограничения](implementation/ISSUES.md). Полный макет: [Concept](full_mockup.md).
