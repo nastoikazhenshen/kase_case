@@ -63,6 +63,22 @@ def _event_as_of(selected_dates: list[str], all_dates: list[str]) -> date:
     return _date(max(candidates)) if candidates else date.today()
 
 
+def _apply_demo() -> None:
+    from mvp.src.demo import DEMO_AMOUNT_KZT, DEMO_DATE, DEMO_TICKER
+    st.session_state.update(selected_dates=[DEMO_DATE], selected_tickers=[DEMO_TICKER],
+                            event_as_of=date.fromisoformat(DEMO_DATE), use_planned=True,
+                            planned_amount=DEMO_AMOUNT_KZT)
+
+
+def _sync_event_date() -> None:
+    if st.session_state.selected_dates:
+        st.session_state.event_as_of = _date(max(st.session_state.selected_dates))
+
+
+def _money(value: object) -> str:
+    return f"{float(value):,.0f}".replace(",", " ")
+
+
 def main() -> None:
     st.set_page_config(page_title="KASE BondScope", page_icon="◈", layout="wide")
     css = Path(__file__).with_name("theme.css")
@@ -75,16 +91,23 @@ def main() -> None:
         return
     observations = snapshot.get("observations", [])
     release = snapshot.get("release", {})
-    st.caption(f"Снимок: {html.escape(str(release.get('snapshot_id', 'не указан')))} · статус: {html.escape(str(release.get('status', 'не указан')))}")
+    st.caption("Приложение: READY_WITH_LIMITATIONS · локальная демонстрационная версия. Данные: PARTIAL_DATA · ограниченный опубликованный срез.")
+    st.caption(f"Снимок: {html.escape(str(release.get('snapshot_id', 'не указан')))} · 6 правил реализованы; на текущих данных доступно одно правило для четырёх выпусков при вводе суммы.")
     dates = sorted({str(row.get("trade_date")) for row in observations if _date(row.get("trade_date"))})
     tickers = sorted({str(row.get("ticker")) for row in observations if row.get("ticker")})
+    st.session_state.setdefault("selected_dates", dates[-1:])
+    st.session_state.setdefault("event_as_of", _event_as_of(st.session_state.selected_dates, dates))
     with st.sidebar:
+        st.subheader("Расчётный пример")
+        st.caption("BIGDb5 · 21.10.2026 · условная сумма 100 000 KZT. Это ввод для демонстрации, не реальная заявка.")
+        st.button("Показать расчётный пример", on_click=_apply_demo,
+                  disabled=not any(row.get("ticker") == "BIGDb5" and row.get("trade_date") == "2026-10-21" for row in observations))
         st.subheader("Фильтры очереди")
-        selected_dates = st.multiselect("Дата наблюдения", dates, default=dates[-1:] if dates else [])
-        selected_tickers = st.multiselect("Тикер", tickers)
-        event_as_of = st.date_input("События по состоянию на", value=_event_as_of(selected_dates, dates), help="По умолчанию — выбранная торговая дата; поздняя дата показывает отдельный ретроспективный контекст.")
-        use_planned = st.checkbox("Сопоставить с планируемой суммой")
-        planned = st.number_input("Планируемая сумма, KZT", min_value=0.0, step=1000.0, disabled=not use_planned, help="Ввод пользователя, не рыночное наблюдение.") if use_planned else None
+        selected_dates = st.multiselect("Дата наблюдения", dates, key="selected_dates", on_change=_sync_event_date)
+        selected_tickers = st.multiselect("Тикер", tickers, key="selected_tickers")
+        event_as_of = st.date_input("События по состоянию на", value=None, key="event_as_of", help="По умолчанию — выбранная торговая дата; поздняя дата показывает отдельный ретроспективный контекст.")
+        use_planned = st.checkbox("Сопоставить с планируемой суммой", key="use_planned")
+        planned = st.number_input("Планируемая сумма, KZT", min_value=0.0, step=1000.0, key="planned_amount", help="Ввод пользователя, не рыночное наблюдение.") if use_planned else None
     selected = [row for row in observations if (not selected_dates or row.get("trade_date") in selected_dates) and (not selected_tickers or row.get("ticker") in selected_tickers)]
     try:
         from mvp.src.reports import build_report, report_csv, report_html
@@ -105,6 +128,19 @@ def main() -> None:
     d.metric("Заблокировано данными", blocked)
     tabs = st.tabs(["Очередь", "Инструмент", "Активность", "События", "Качество и источники", "Концепция"])
     with tabs[0]:
+        from mvp.src.demo import DEMO_RULE
+        ready = [item for item in evaluations if item["rule"] == DEMO_RULE and item["status"] in {"EVALUATED", "TRIGGERED"}]
+        if ready:
+            st.subheader("Планируемая сумма к наблюдаемому обороту дня")
+            for item in ready:
+                turnover = next(row["turnover_kzt"] for row in selected if row["row_id"] == item["row_id"])
+                st.markdown(f"**{item['ticker']} · {item['trade_date']} · {item['trading_mode']}**")
+                st.markdown(f"### {_money(planned)} KZT ÷ {_money(turnover)} KZT = {float(item['value']):.4f}× ({float(item['value']) * 100:.2f}%)")
+                st.caption("Числитель — условная планируемая сумма пользователя. Знаменатель — опубликованный оборот одного дня, округлённый до 1 000 KZT.")
+                st.write(f"{STATUS_LABELS[item['status']]}: порог {item['threshold']}× — проверяемая гипотеза, не норматив KASE.")
+            st.info("Отношение показывает масштаб суммы относительно оборота дня. Оно не измеряет глубину стакана, не гарантирует исполнение и не заменяет историческую оценку ликвидности.")
+        elif not use_planned:
+            st.info("Откройте расчётный пример слева или задайте собственную планируемую сумму. Рыночные данные при этом не меняются.")
         queue = [{"Тикер": item.get("ticker"), "Дата": item.get("trade_date"), "Правило": RULE_LABELS.get(item.get("rule"), item.get("rule")), "Значение": _display(item.get("value")), "Статус": STATUS_LABELS.get(item.get("status"), item.get("status"))} for item in evaluations]
         st.dataframe(queue, width="stretch", hide_index=True)
         st.caption("«Требует проверки» означает правило-исключение для аналитика, а не вывод о нарушении или прогноз.")

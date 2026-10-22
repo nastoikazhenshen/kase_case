@@ -1,0 +1,20 @@
+{
+  "source_workbook": "mvp/data/raw/archive/verification/inputs/BondScope_Dashboard_Corrected_M12_8_M24_10.xlsx",
+  "source_sha256": "9cfaf368374565280560c66a3534e15045645ca1a3e825eba0d9698c04b2e68b",
+  "output_workbook": "mvp/outputs/final/finance/BondScope_Dashboard_Finalized_Base_M12_8_M24_10.xlsx",
+  "output_sha256": "742c6539fb1b5776d92db9fb311434aa23bdc1705e03c73e876ff1d6b3c67601",
+  "output_status": "CREATED_LOCAL_IGNORED_ARTIFACT",
+  "authoring": "@oai/artifact-tool via mvp/scripts/finalize_finance.mjs",
+  "allowlisted_changes": [
+    "14 Decision Gate!B31: replace stale no-payback base claim with independently recomputed M20/M24 scenario wording",
+    "14 Decision Gate!F16: state CAPEX/OPEX/CAC scope and unresolved VAT/income-tax treatment",
+    "13 Buyer Pilot!C31:C32: link base M12/M24 to 08 Scenarios",
+    "13 Buyer Pilot!F33: annotate the unresolved 8–12 versus 12–18 source conflict while preserving C33=10; no new SAM assumption is adopted",
+    "09 KPI Risks!B13:C13:H13: distinguish mandatory 100% sourced/explained signals from reproducibility ≥95%, defined as matching repeat runs on an agreed control-case denominator",
+    "13 Buyer Pilot!33 and 09 KPI Risks!13: row heights 34→48 and 32→78 only, so the conflict and defined KPI text are fully rendered"
+  ],
+  "known_unresolved_source_conflict": "13 Buyer Pilot!C33=10 remains unchanged. F33 now explicitly records its 8–12 label conflict with the archive workbook's self-referenced 12–18 at 04 Inputs!C14/C45:D45; customer_segment(2).md/R01 is unavailable in this workspace and neither range is adopted.",
+  "preserved": ["base financial numeric model", "stress 4/6 scenario", "growth 10/12 scenario", "eight-prospect research list", "four usable-instrument count", "existing layout and formulas outside allowlisted cells"],
+  "verification_record": "mvp/implementation/finalization/finance_roundtrip_comparison.json",
+  "engine_limitation": "artifact-tool recalculation and its error scan completed without matched formula errors; native Excel/LibreOffice recalculation and print rendering remain an external release check."
+}

@@ -1,0 +1,64 @@
+{
+  "schema_version": "bondscope-base-scenario-1.0",
+  "status": "ASSUMPTION",
+  "unit": "paying organization",
+  "timing": "months after launch",
+  "source_workbook": "mvp/data/raw/archive/verification/inputs/BondScope_Dashboard_Corrected_M12_8_M24_10.xlsx",
+  "source_workbook_sha256": "9cfaf368374565280560c66a3534e15045645ca1a3e825eba0d9698c04b2e68b",
+  "monthly_subscription_kzt": 600000,
+  "month_12_active_organizations": 8,
+  "month_24_active_organizations": 10,
+  "monthly_new_organizations": [
+    2,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+  ],
+  "monthly_churn_organizations": {
+    "13": 0
+  },
+  "monthly_opex_kzt": 1870000,
+  "variable_cost_per_active_organization_kzt": 70000,
+  "connection_cost_per_new_organization_kzt": 150000,
+  "startup_expenditure_kzt": 26348000,
+  "tax_scope": "UNRESOLVED; VAT and income tax are not modelled in this scenario",
+  "reference_checkpoints": {
+    "revenue_24m_kzt": 96600000,
+    "cumulative_cashflow_m24_kzt": 12602000,
+    "payback_month": 20
+  },
+  "not_claimed": [
+    "actual customers",
+    "actual sales",
+    "verified willingness to pay",
+    "net profit after all taxes"
+  ],
+  "source_cells": {
+    "monthly_subscription_kzt": "04 Inputs!C8",
+    "monthly_opex_kzt": "04 Inputs!C15",
+    "variable_cost_per_active_organization_kzt": "04 Inputs!C16 + 04 Inputs!C17",
+    "connection_cost_per_new_organization_kzt": "04 Inputs!C18",
+    "startup_expenditure_kzt": "05 Build Budget!I22",
+    "monthly_new_organizations": "15 Sales Plan!D6:D29"
+  }
+}

@@ -99,9 +99,12 @@ def report_html(report):
     title = html.escape(report["report_id"])
     limitations = "".join(f"<li>{html.escape(s)}</li>" for s in report["limitations"])
     links = "".join(f'<li>{html.escape(s["source_id"])} <a href="{html.escape(safe_url(s["source_url"]), quote=True)}">Источник</a> · {html.escape(s.get("retrieved_at", "") or s.get("retrieval_date", "") or "точное время получения не записано")} · SHA-256 {html.escape(s.get("evidence_sha256", ""))}</li>' for s in report["sources"])
+    amount = report.get("planned_amount_kzt")
+    input_note = "Сумма пользователя не задана." if amount is None else f"Планируемая сумма: {html.escape(str(amount))} KZT. Условный ввод пользователя, не рыночное наблюдение и не реальная заявка."
     return f'''<!doctype html><html lang="ru"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title}</title><style>body{{font:15px Arial,sans-serif;color:#45464F;margin:32px;line-height:1.5}}h1{{color:#038726}}table{{border-collapse:collapse;width:100%;font-size:12px;margin:16px 0}}td,th{{border-bottom:1px solid #d1d1d1;padding:8px;text-align:left;vertical-align:top}}th{{background:#edf5ee}}li{{overflow-wrap:anywhere}}@media print{{body{{margin:10mm}}}}</style>
 <h1>KASE BondScope · отчёт аналитика</h1><p>Конкурсный прототип предлагаемого модуля. Не инвестиционная рекомендация.</p>
+<p>{input_note}</p>
 <p>{title}<br>Снимок: {html.escape(report['snapshot_id'])}<br>Контекст событий на {html.escape(report['as_of'])}; дата означает конец дня +05:00. Это ретроспективный контекст, не утверждение об осведомлённости на момент сделки.</p>
 <h2>Наблюдения</h2>{_table(report['observations'], [('ticker','Тикер'),('instrument_id','ISIN'),('trade_date','Дата'),('trading_mode','Режим'),('turnover_kzt','Оборот, KZT'),('trades_count','Сделки'),('average_observed_trade_size_kzt','Средний наблюдаемый размер сделки, KZT'),('price_view_status','База наблюдаемой цены'),('finality','Окончательность')])}<p>Средний размер = опубликованный округлённый оборот / число сделок; описательный расчёт, не историческая норма и не прогноз исполнения.</p>
 <h2>Правила и основания</h2>{_table(report['evaluations'], [('ticker','Тикер'),('rule','Правило'),('value','Значение'),('units','Единицы'),('status','Статус'),('baseline','База'),('n','n'),('threshold','Порог-гипотеза'),('explanation','Объяснение')])}

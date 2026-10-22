@@ -1,0 +1,30 @@
+{
+  "snapshot_id": "BS3-40698bfc0c453479",
+  "report_id": "BS3-REPORT-a9c167a239e236660e1a",
+  "screenshot_path": "mvp/outputs/final/app/demo-example-1440.png",
+  "screenshot_sha256": "7eebc437a6725346f353e017f4e23bcce09cb4ba48543b9883d10151fe3f165b",
+  "editable_slides": 2,
+  "pdf_type": "Raster preview of actual final PPTX renders; editable objects remain in PPTX",
+  "artifacts": [
+    {
+      "path": "mvp/outputs/final/slides6_7_kase_bondscope_mvp_v4.pptx",
+      "bytes": 175101,
+      "sha256": "f606986ea16eeb42a83f8f610d15a68db07d4c50e9b9edf36f7251d28cc951f1"
+    },
+    {
+      "path": "mvp/outputs/final/slides6_7_kase_bondscope_mvp_v4.pdf",
+      "bytes": 207662,
+      "sha256": "e5a8d71da4b6b95c93036a11f5ccac1a7d1a8ea41513c5facb45d70d59c8c761"
+    },
+    {
+      "path": "mvp/outputs/final/slides6_7_06_v4.png",
+      "bytes": 154971,
+      "sha256": "75c84747d9b2f1a7b5abdd1cc1a4dea6f423d422eba70ed34531063b6624a25c"
+    },
+    {
+      "path": "mvp/outputs/final/slides6_7_07_v4.png",
+      "bytes": 100836,
+      "sha256": "17645ec11be46f1f04f56830ac789ed7b7f6c6b1ec490763f2a153159721dd59"
+    }
+  ]
+}

@@ -5,7 +5,9 @@ import { fileURLToPath } from 'node:url';
 import { Workbook, SpreadsheetFile } from '@oai/artifact-tool';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const report = JSON.parse(await fs.readFile(path.join(root, 'outputs/report.json'), 'utf8'));
+const demo = process.argv.includes('--demo');
+const outputDir = path.join(root, demo ? 'outputs/final/demo' : 'outputs');
+const report = JSON.parse(await fs.readFile(path.join(outputDir, 'report.json'), 'utf8'));
 const snapshot = JSON.parse(await fs.readFile(path.join(root, 'data/processed/snapshot.json'), 'utf8'));
 const wb = Workbook.create();
 const summary = wb.worksheets.add('Наблюдения');
@@ -42,7 +44,7 @@ function style(sheet, region, header, widths) {
 write(summary, 'A2', [['KASE BondScope 3.0 · наблюдения за 21 октября 2026']]);
 summary.getRange('A2').format.font = {name:'Arial',size:16,bold:true,color:'#038726'};
 write(summary, 'A3', [['Конкурсный прототип. Снимок не сертифицирован как окончательные итоги дня.']]);
-write(summary, 'A4', [['Сумма, KZT', null, 'Необязательный ввод пользователя, не рыночное наблюдение.']]);
+write(summary, 'A4', [['Сумма, KZT', report.planned_amount_kzt, demo ? 'Условный ввод для демонстрации, не реальная заявка и не рыночное наблюдение.' : 'Необязательный ввод пользователя, не рыночное наблюдение.']]);
 summary.getRange('B4').format.fill = '#FFF4CC';
 summary.getRange('B4').setNumberFormat('#,##0');
 write(summary, 'A5', [['Отчёт', report.report_id]]);
@@ -123,14 +125,20 @@ if (Math.abs(Number(summary.getRange('I9').values[0][0])-expectedRatio)>1e-10) t
 summary.getRange('B4').clear({applyTo:'contents'});
 wb.recalculate();
 if (summary.getRange('I9').values[0][0] !== '') throw new Error('Blank planned input became zero');
-if (summary.getRange('E12').values[0][0] !== 0) throw new Error('Zero trades became missing');
+if (!demo && summary.getRange('E12').values[0][0] !== 0) throw new Error('Zero trades became missing');
 if (summary.getRange('B9').values[0][0] !== '21.10.2026') throw new Error('Date is not human-readable text');
+if (demo) {
+  summary.getRange('B4').values=[[report.planned_amount_kzt]];
+  wb.recalculate();
+  const formal = report.evaluations.find(r => r.rule === 'planned_amount_to_observed_daily_turnover');
+  if (Math.abs(Number(summary.getRange('I9').values[0][0])-formal.value)>1e-12) throw new Error('Workbook/report example mismatch');
+}
 const check=await wb.inspect({kind:'match',searchTerm:'#REF!|#DIV/0!|#VALUE!|#NAME\\?|#NUM!|#SPILL!|#CALC!',options:{useRegex:true,maxResults:30},maxChars:1800});
-await fs.writeFile(path.join(root,'outputs/workbook_checks.json'),JSON.stringify({report_id:report.report_id,live_input_recalculated:true,blank_restored:true,inspection:check.ndjson},null,2));
+await fs.writeFile(path.join(outputDir,'workbook_checks.json'),JSON.stringify({report_id:report.report_id,live_input_recalculated:true,blank_input_tested:true,delivered_planned_amount_kzt:report.planned_amount_kzt,inspection:check.ndjson},null,2));
 const output=await SpreadsheetFile.exportXlsx(wb);
-await output.save(path.join(root,'outputs/mvp_results.xlsx'));
+await output.save(path.join(outputDir,'mvp_results.xlsx'));
 for (const [sheetName,range,index] of [['Наблюдения','A2:J19',0],['Правила','A1:J14',1],['Оценки и события','A1:G17',2],['Источники','A1:Q6',3]]) {
   const preview=await wb.render({sheetName,range,scale:1,format:'png'});
-  await fs.writeFile(path.join(root,`outputs/workbook_preview${index}.png`),new Uint8Array(await preview.arrayBuffer()));
+  await fs.writeFile(path.join(outputDir,`workbook_preview${index}.png`),new Uint8Array(await preview.arrayBuffer()));
 }
-console.log(JSON.stringify({file:'mvp/outputs/mvp_results.xlsx',report_id:report.report_id,formula_input_check:'PASS'}));
+console.log(JSON.stringify({file:path.join(outputDir,'mvp_results.xlsx'),report_id:report.report_id,formula_input_check:'PASS'}));

@@ -1,0 +1,262 @@
+{
+  "valid": true,
+  "expected": {
+    "month_12_active_organizations": 8,
+    "month_24_active_organizations": 10,
+    "revenue_24m_kzt": 96600000,
+    "cumulative_cashflow_m24_kzt": 12602000,
+    "payback_month": 20
+  },
+  "computed": {
+    "status": "ASSUMPTION",
+    "unit": "paying organization",
+    "month_12_active_organizations": 8,
+    "month_24_active_organizations": 10,
+    "revenue_24m_kzt": 96600000,
+    "cumulative_cashflow_m24_kzt": 12602000,
+    "payback_month": 20,
+    "monthly_rows": [
+      {
+        "month": 1,
+        "beginning_active": 0,
+        "new": 2,
+        "churn": 0,
+        "active": 2,
+        "revenue_kzt": 1200000,
+        "cashflow_kzt": -1110000,
+        "cumulative_cashflow_kzt": -27458000
+      },
+      {
+        "month": 2,
+        "beginning_active": 2,
+        "new": 0,
+        "churn": 0,
+        "active": 2,
+        "revenue_kzt": 1200000,
+        "cashflow_kzt": -810000,
+        "cumulative_cashflow_kzt": -28268000
+      },
+      {
+        "month": 3,
+        "beginning_active": 2,
+        "new": 1,
+        "churn": 0,
+        "active": 3,
+        "revenue_kzt": 1800000,
+        "cashflow_kzt": -430000,
+        "cumulative_cashflow_kzt": -28698000
+      },
+      {
+        "month": 4,
+        "beginning_active": 3,
+        "new": 0,
+        "churn": 0,
+        "active": 3,
+        "revenue_kzt": 1800000,
+        "cashflow_kzt": -280000,
+        "cumulative_cashflow_kzt": -28978000
+      },
+      {
+        "month": 5,
+        "beginning_active": 3,
+        "new": 1,
+        "churn": 0,
+        "active": 4,
+        "revenue_kzt": 2400000,
+        "cashflow_kzt": 100000,
+        "cumulative_cashflow_kzt": -28878000
+      },
+      {
+        "month": 6,
+        "beginning_active": 4,
+        "new": 0,
+        "churn": 0,
+        "active": 4,
+        "revenue_kzt": 2400000,
+        "cashflow_kzt": 250000,
+        "cumulative_cashflow_kzt": -28628000
+      },
+      {
+        "month": 7,
+        "beginning_active": 4,
+        "new": 1,
+        "churn": 0,
+        "active": 5,
+        "revenue_kzt": 3000000,
+        "cashflow_kzt": 630000,
+        "cumulative_cashflow_kzt": -27998000
+      },
+      {
+        "month": 8,
+        "beginning_active": 5,
+        "new": 0,
+        "churn": 0,
+        "active": 5,
+        "revenue_kzt": 3000000,
+        "cashflow_kzt": 780000,
+        "cumulative_cashflow_kzt": -27218000
+      },
+      {
+        "month": 9,
+        "beginning_active": 5,
+        "new": 1,
+        "churn": 0,
+        "active": 6,
+        "revenue_kzt": 3600000,
+        "cashflow_kzt": 1160000,
+        "cumulative_cashflow_kzt": -26058000
+      },
+      {
+        "month": 10,
+        "beginning_active": 6,
+        "new": 0,
+        "churn": 0,
+        "active": 6,
+        "revenue_kzt": 3600000,
+        "cashflow_kzt": 1310000,
+        "cumulative_cashflow_kzt": -24748000
+      },
+      {
+        "month": 11,
+        "beginning_active": 6,
+        "new": 1,
+        "churn": 0,
+        "active": 7,
+        "revenue_kzt": 4200000,
+        "cashflow_kzt": 1690000,
+        "cumulative_cashflow_kzt": -23058000
+      },
+      {
+        "month": 12,
+        "beginning_active": 7,
+        "new": 1,
+        "churn": 0,
+        "active": 8,
+        "revenue_kzt": 4800000,
+        "cashflow_kzt": 2220000,
+        "cumulative_cashflow_kzt": -20838000
+      },
+      {
+        "month": 13,
+        "beginning_active": 8,
+        "new": 0,
+        "churn": 0,
+        "active": 8,
+        "revenue_kzt": 4800000,
+        "cashflow_kzt": 2370000,
+        "cumulative_cashflow_kzt": -18468000
+      },
+      {
+        "month": 14,
+        "beginning_active": 8,
+        "new": 0,
+        "churn": 0,
+        "active": 8,
+        "revenue_kzt": 4800000,
+        "cashflow_kzt": 2370000,
+        "cumulative_cashflow_kzt": -16098000
+      },
+      {
+        "month": 15,
+        "beginning_active": 8,
+        "new": 0,
+        "churn": 0,
+        "active": 8,
+        "revenue_kzt": 4800000,
+        "cashflow_kzt": 2370000,
+        "cumulative_cashflow_kzt": -13728000
+      },
+      {
+        "month": 16,
+        "beginning_active": 8,
+        "new": 0,
+        "churn": 0,
+        "active": 8,
+        "revenue_kzt": 4800000,
+        "cashflow_kzt": 2370000,
+        "cumulative_cashflow_kzt": -11358000
+      },
+      {
+        "month": 17,
+        "beginning_active": 8,
+        "new": 1,
+        "churn": 0,
+        "active": 9,
+        "revenue_kzt": 5400000,
+        "cashflow_kzt": 2750000,
+        "cumulative_cashflow_kzt": -8608000
+      },
+      {
+        "month": 18,
+        "beginning_active": 9,
+        "new": 0,
+        "churn": 0,
+        "active": 9,
+        "revenue_kzt": 5400000,
+        "cashflow_kzt": 2900000,
+        "cumulative_cashflow_kzt": -5708000
+      },
+      {
+        "month": 19,
+        "beginning_active": 9,
+        "new": 0,
+        "churn": 0,
+        "active": 9,
+        "revenue_kzt": 5400000,
+        "cashflow_kzt": 2900000,
+        "cumulative_cashflow_kzt": -2808000
+      },
+      {
+        "month": 20,
+        "beginning_active": 9,
+        "new": 0,
+        "churn": 0,
+        "active": 9,
+        "revenue_kzt": 5400000,
+        "cashflow_kzt": 2900000,
+        "cumulative_cashflow_kzt": 92000
+      },
+      {
+        "month": 21,
+        "beginning_active": 9,
+        "new": 0,
+        "churn": 0,
+        "active": 9,
+        "revenue_kzt": 5400000,
+        "cashflow_kzt": 2900000,
+        "cumulative_cashflow_kzt": 2992000
+      },
+      {
+        "month": 22,
+        "beginning_active": 9,
+        "new": 0,
+        "churn": 0,
+        "active": 9,
+        "revenue_kzt": 5400000,
+        "cashflow_kzt": 2900000,
+        "cumulative_cashflow_kzt": 5892000
+      },
+      {
+        "month": 23,
+        "beginning_active": 9,
+        "new": 1,
+        "churn": 0,
+        "active": 10,
+        "revenue_kzt": 6000000,
+        "cashflow_kzt": 3280000,
+        "cumulative_cashflow_kzt": 9172000
+      },
+      {
+        "month": 24,
+        "beginning_active": 10,
+        "new": 0,
+        "churn": 0,
+        "active": 10,
+        "revenue_kzt": 6000000,
+        "cashflow_kzt": 3430000,
+        "cumulative_cashflow_kzt": 12602000
+      }
+    ]
+  },
+  "mismatches": {}
+}

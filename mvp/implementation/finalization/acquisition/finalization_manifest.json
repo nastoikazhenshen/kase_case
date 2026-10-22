@@ -1,0 +1,68 @@
+{
+  "schema_version": "kase-finalization-acquisition-1.0",
+  "created_at_utc": "2026-10-22T07:00:00Z",
+  "approach_limit": 3,
+  "approaches_completed": 3,
+  "stop_reason": "Three materially different authorised approaches completed; none supplied all required eligibility fields. No further retrieval is authorised in this finalization pass.",
+  "redistribution_status": "LOCAL_ONLY_PENDING_WRITTEN_KASE_PERMISSION",
+  "local_raw_root": "mvp/data/raw/finalization/2026-10-22",
+  "required_for_canonical_addition": [
+    "instrument identity",
+    "KZT currency",
+    "dated observation",
+    "units",
+    "date-specific trading mode",
+    "authoritative price basis",
+    "finality",
+    "source provenance"
+  ],
+  "attempts": [
+    {
+      "number": 1,
+      "approach": "Official PDF link extracted from previously captured settlement-prices SSR",
+      "source_url": "https://kase.kz/uploads/iris_api_v2_28_00_marketdata_f8ef2660d2.pdf",
+      "retrieval_started_at_utc": "2026-10-22T06:58:38.650145+00:00",
+      "retrieval_completed_at_utc": "2026-10-22T06:58:40.416484+00:00",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "bytes": 1375286,
+      "sha256": "aefdbf81874638d95d959c6f23fcf7369df18ef758cc66fd20ace2fa53c036d1",
+      "local_artifact": "mvp/data/raw/finalization/2026-10-22/attempt-01-iris-marketdata-spec.pdf",
+      "result": "Official IRIS API schema documentation retrieved. It describes general price-type, board and deal concepts, but does not furnish a dated public export for a target instrument.",
+      "eligibility": "INELIGIBLE_SCHEMA_ONLY",
+      "missing": ["target-instrument record", "KZT proof for a record", "dated observation", "units for a record", "date-specific mode", "binding from schema to old trade-info fields", "finality"]
+    },
+    {
+      "number": 2,
+      "approach": "Public corporate-bonds SSR page explicitly named in the finalization prompt",
+      "source_url": "https://kase.kz/ru/markets/corporate-bonds",
+      "retrieval_started_at_utc": "2026-10-22T06:59:25.057116+00:00",
+      "retrieval_completed_at_utc": "2026-10-22T06:59:26.448788+00:00",
+      "http_status": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 1135811,
+      "sha256": "402ce74394175c8f35200d0365f79e210bf97197d12d5c33b572d226ddad9a5a",
+      "local_artifact": "mvp/data/raw/finalization/2026-10-22/attempt-02-corporate-bonds.html",
+      "result": "SSR page retrieved. Local inspection found no explicit CSV/XLSX export or observed public dated corporate-bond request containing the required field semantics.",
+      "eligibility": "INELIGIBLE_NO_DATED_EXPORT_OR_FIELD_BINDING",
+      "missing": ["dated target observation", "units", "date-specific mode", "authoritative price basis", "finality"]
+    },
+    {
+      "number": 3,
+      "approach": "Public trading-results landing page explicitly named in the finalization prompt",
+      "source_url": "https://kase.kz/ru/information/trading-results",
+      "retrieval_started_at_utc": "2026-10-22T06:59:45.595050+00:00",
+      "retrieval_completed_at_utc": "2026-10-22T06:59:46.457002+00:00",
+      "http_status": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 242008,
+      "sha256": "c0e0598b8c9db9f77dfcea18c9e38d4736b23ac60e70c1057c22b70cf8b704a0",
+      "local_artifact": "mvp/data/raw/finalization/2026-10-22/attempt-03-trading-results.html",
+      "result": "Landing SSR page retrieved. It did not expose an explicit public corporate-bond export or a selected corporate-bond/date request; no guessed parameters were sent.",
+      "eligibility": "INELIGIBLE_NO_CORPORATE_BOND_SELECTION_EVIDENCE",
+      "missing": ["target identity", "KZT proof", "dated observation", "units", "date-specific mode", "price basis", "finality"]
+    }
+  ],
+  "eligible_new_observation_count": 0,
+  "canonical_change_proposal": null
+}

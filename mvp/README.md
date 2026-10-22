@@ -6,7 +6,7 @@
 
 В локальном evidence-pack есть пять целевых выпусков и 10 архивных дневных строк за 20–21 октября 2026 года. Новые ответы публичного API хранятся отдельными ревизиями: по одной опубликованной предыдущей дневной строке на выпуск; они не подменяют архивные канонические строки. Добавлен контекст из 9 строк официальной рыночной оценки (3 выпуска × 3 даты) и одного полного сообщения CLSGb11.
 
-Статус снимка — `PARTIAL — EXTERNAL DATA BLOCKER`. Для ценовых правил нет доказательства активной clean-price вкладки, а для части дат нет подтверждённого режима торгов. Для исторических правил нет минимум 10 сопоставимых предыдущих финальных наблюдений. Поэтому эти правила показывают причину блокировки, а не вычисленный сигнал.
+Готовность приложения — `READY_WITH_LIMITATIONS`. Подробный финальный показ и слайды описаны в [инструкции](README_run.md). Статус данных — `PARTIAL_DATA`; сохранённый статус снимка — `PARTIAL — EXTERNAL DATA BLOCKER`. Для ценовых правил нет доказательства конкретной ценовой базы через выбранную вкладку или датированную официальную схему/выгрузку, а для части дат нет подтверждённого режима торгов. Для исторических правил нет минимум 10 сопоставимых предыдущих финальных наблюдений. Поэтому эти правила показывают причину блокировки, а не вычисленный сигнал.
 
 Подробности: [доступность данных](data_availability_report.md), [доказательства](evidence.md), [реестр источников](source_registry.md), [ограничения для передачи](handoff/data_limits.md).
 
@@ -17,13 +17,13 @@
 ```powershell
 py -3.12 -m venv mvp/.venv
 mvp/.venv/Scripts/python.exe -m pip install -r mvp/requirements.lock.txt
-mvp/.venv/Scripts/python.exe mvp/scripts/restore_evidence.py "путь/к/bondscope-evidence.zip"
+mvp/.venv/Scripts/python.exe mvp/scripts/restore_evidence.py "путь/к/bondscope-evidence-final-20261022.zip"
 mvp/.venv/Scripts/python.exe -m mvp.src.build_snapshot
 mvp/.venv/Scripts/python.exe mvp/scripts/export_report.py
-mvp/.venv/Scripts/python.exe -m streamlit run mvp/src/app.py --server.address 127.0.0.1 --browser.gatherUsageStats false
+mvp/.venv/Scripts/python.exe -m streamlit run mvp/src/app.py --server.address 127.0.0.1 --server.headless true --browser.gatherUsageStats false
 ```
 
-Команда `restore_evidence.py` проверяет манифест, хеши, допустимые пути и совпадение релиза; не заменяет отличающиеся существующие файлы. Допустимы только локальные доказательства, производные данные, отчёты и скриншоты внутри `mvp/`. Пакет текущей поставки: `mvp/local_pack/bondscope-evidence.zip`; его публичный паспорт — [local_pack_manifest.json](implementation/local_pack_manifest.json). Пакет не входит в Git. Без него интерфейс показывает явное состояние отсутствующих доказательств; сборка и экспорт завершаются ошибкой.
+Команда `restore_evidence.py` проверяет манифест, хеши, допустимые пути и совпадение релиза; не заменяет отличающиеся существующие файлы. Допустимы только локальные доказательства, производные данные, отчёты и скриншоты внутри `mvp/`. Пакет текущей поставки: `mvp/local_pack/bondscope-evidence-final-20261022.zip`; его публичный паспорт — [local_pack_manifest.json](implementation/finalization/local_pack_manifest.json). Предыдущий пакет сохранён отдельно. Пакет не входит в Git. Без него интерфейс показывает явное состояние отсутствующих доказательств; сборка и экспорт завершаются ошибкой.
 
 Автоматическое получение новых данных не требуется для офлайн-демо. CLI `python -m mvp.src.acquisition` — отдельная контролируемая операция с фиксированным allowlist KASE, кэшем и ограниченной повторной попыткой; он не должен использоваться для обхода WAF или для изменения канонического снимка.
 
