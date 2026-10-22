@@ -22,6 +22,7 @@ def main():
     snapshot = load_snapshot()
     slides = json.loads((ROOT / "implementation/finalization/slides_manifest.json").read_text(encoding="utf8"))
     final_slides = {record["path"] for record in slides["artifacts"]}
+    final_slides.add(slides["screenshot_path"])
     files = []
     for directory in ("data/raw/archive", "data/raw/acquisition", "data/raw/finalization", "data/raw/style", "data/processed", "outputs", "mvp_screenshots"):
         for path in sorted((ROOT / directory).rglob("*")):

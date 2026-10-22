@@ -1,28 +1,28 @@
 {
   "snapshot_id": "BS3-40698bfc0c453479",
   "report_id": "BS3-REPORT-a9c167a239e236660e1a",
-  "screenshot_path": "mvp/outputs/final/app/demo-example-1440.png",
-  "screenshot_sha256": "7eebc437a6725346f353e017f4e23bcce09cb4ba48543b9883d10151fe3f165b",
+  "screenshot_path": "mvp/outputs/final/slides6_7_source_app_v5.png",
+  "screenshot_sha256": "9de5c07df7abac58d168e838d55eaa8af58f65c26220f6f7264a17c5c95c88c3",
   "editable_slides": 2,
   "pdf_type": "Raster preview of actual final PPTX renders; editable objects remain in PPTX",
   "artifacts": [
     {
-      "path": "mvp/outputs/final/slides6_7_kase_bondscope_mvp_v4.pptx",
-      "bytes": 175101,
-      "sha256": "f606986ea16eeb42a83f8f610d15a68db07d4c50e9b9edf36f7251d28cc951f1"
+      "path": "mvp/outputs/final/slides6_7_kase_bondscope_mvp_v5.pptx",
+      "bytes": 175512,
+      "sha256": "b907c9099f5f8ec6522de7b3f4f8b9c41c23dbbe9cddc4d1bd253d08427e1d77"
     },
     {
-      "path": "mvp/outputs/final/slides6_7_kase_bondscope_mvp_v4.pdf",
-      "bytes": 207662,
-      "sha256": "e5a8d71da4b6b95c93036a11f5ccac1a7d1a8ea41513c5facb45d70d59c8c761"
+      "path": "mvp/outputs/final/slides6_7_kase_bondscope_mvp_v5.pdf",
+      "bytes": 207663,
+      "sha256": "1f1a3c992c78c96403c50cab21faf5aca8110190ccd57eed76c1a2b7a402061f"
     },
     {
-      "path": "mvp/outputs/final/slides6_7_06_v4.png",
-      "bytes": 154971,
-      "sha256": "75c84747d9b2f1a7b5abdd1cc1a4dea6f423d422eba70ed34531063b6624a25c"
+      "path": "mvp/outputs/final/slides6_7_06_v5.png",
+      "bytes": 155067,
+      "sha256": "f1745363303bb4015ee2931539dd19be9dc11ee858779fa06600ea2ef21f214b"
     },
     {
-      "path": "mvp/outputs/final/slides6_7_07_v4.png",
+      "path": "mvp/outputs/final/slides6_7_07_v5.png",
       "bytes": 100836,
       "sha256": "17645ec11be46f1f04f56830ac789ed7b7f6c6b1ec490763f2a153159721dd59"
     }

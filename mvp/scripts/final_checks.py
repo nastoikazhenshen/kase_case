@@ -8,12 +8,13 @@ import sys
 from datetime import datetime, timezone
 
 ROOT = Path(__file__).resolve().parents[2]
-LOGS = ROOT / "mvp/local_validation/finalization"
+LOG_ROOT = ROOT / "mvp/local_validation/finalization"
 
 
 def main():
-    LOGS.mkdir(parents=True, exist_ok=True)
     sha = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+    logs = LOG_ROOT / (sha[:12] + "-" + datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ"))
+    logs.mkdir(parents=True, exist_ok=False)
     commands = [
         ["-m", "mvp.src.build_snapshot"],
         ["mvp/scripts/export_report.py"],
@@ -23,15 +24,15 @@ def main():
         ["-m", "ruff", "check", "mvp/src", "mvp/tests", "mvp/scripts", "--select", "F"],
         ["mvp/scripts/reconcile_sources.py"],
         ["-m", "mvp.src.finance_validation"],
-        ["mvp/scripts/verify_final_artifacts.py"],
         ["mvp/scripts/browser_smoke.py"],
+        ["mvp/scripts/verify_final_artifacts.py"],
     ]
     results = []
     for i, command in enumerate(commands, start=1):
         start = datetime.now(timezone.utc).isoformat()
         process = subprocess.run([sys.executable, "-X", "utf8", *command], cwd=ROOT, capture_output=True, text=True, encoding="utf8")
         log = (process.stdout + "\n" + process.stderr).encode("utf8")
-        path = LOGS / f"check-{i:02}.log"
+        path = logs / f"check-{i:02}.log"
         path.write_bytes(log)
         text = log.decode("utf8")
         count = re.search(r"Ran (\d+) tests?", text)

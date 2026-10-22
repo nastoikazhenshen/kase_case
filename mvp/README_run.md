@@ -66,7 +66,7 @@ python -m mvp.src.acquisition --ticker BIGDb5 --cache-dir mvp/data/raw/acquisiti
 
 Статусы разделены: приложение `READY_WITH_LIMITATIONS`, данные `PARTIAL_DATA`. Заблокированные правила не считаются отсутствием риска. XLSX примера находится в `mvp/outputs/final/demo/mvp_results.xlsx`; исправленная финансовая копия — в `mvp/outputs/final/finance/`. Исходная книга не изменяется.
 
-Для генерации слайдов задайте `RUNTIME_NODE`, `RUNTIME_NODE_MODULES`, `RUNTIME_PYTHON`, `PRESENTATIONS_SKILL_DIR` на установленный авторский runtime и выполните `node mvp/scripts/build_slides.mjs`. По умолчанию создаётся v4. При повторном авторском выпуске задайте новую `BONDSCOPE_SLIDE_VERSION`, например `v5`: существующий PPTX не перезаписывается. Команда создаёт PPTX, рендерит его PNG и собирает PDF-превью из этих кадров. Редактируемые объекты находятся в PPTX. Приложение не зависит от авторского Node runtime.
+Для генерации слайдов задайте `RUNTIME_NODE`, `RUNTIME_NODE_MODULES`, `RUNTIME_PYTHON`, `PRESENTATIONS_SKILL_DIR` на установленный авторский runtime и выполните `node mvp/scripts/build_slides.mjs`. По умолчанию создаётся v5. При повторном авторском выпуске задайте новую `BONDSCOPE_SLIDE_VERSION`, например `v6`: существующий PPTX не перезаписывается. Команда создаёт PPTX, рендерит его PNG и собирает PDF-превью из этих кадров. Редактируемые объекты находятся в PPTX. Приложение не зависит от авторского Node runtime.
 
 Дополнительные финальные проверки:
 

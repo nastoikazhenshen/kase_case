@@ -14,11 +14,12 @@ process.env.RUNTIME_NODE_MODULES ||= path.resolve(path.dirname(process.execPath)
 process.env.RUNTIME_PYTHON ||= runtimePython;
 const finalDir = path.join(workspaceDir, "mvp", "outputs", "final");
 const stagingDir = path.join(workspaceDir, "mvp", "local_validation", "slides6_7");
-const version = process.env.BONDSCOPE_SLIDE_VERSION || "v4";
+const version = process.env.BONDSCOPE_SLIDE_VERSION || "v5";
 if (!/^v[0-9]+$/.test(version)) throw new Error("Invalid slide version");
 const candidatePath = path.join(stagingDir, `slides6_7_candidate_${version}.pptx`);
 const finalPath = path.join(finalDir, `slides6_7_kase_bondscope_mvp_${version}.pptx`);
 const screenshotPath = path.join(finalDir, "app", "demo-example-1440.png");
+const frozenScreenshotPath = path.join(finalDir, `slides6_7_source_app_${version}.png`);
 
 const report = JSON.parse(await fs.readFile(path.join(finalDir, 'demo/report.json'), 'utf8'));
 const observation = report.observations[0];
@@ -101,7 +102,7 @@ async function addSlide6(presentation) {
   text(slide, "доля наблюдаемого оборота", 528, 374, 220, 22, { fontSize: 14, color: C.muted });
   text(slide, `Порог ${Number(formal.threshold) * 100}% — гипотеза правила. Расчёт не подтверждает исполнение сделки.`, 528, 421, 218, 66, { fontSize: 15, color: C.graphite });
 
-  const screenshot = await readImageBlob(screenshotPath);
+  const screenshot = await readImageBlob(frozenScreenshotPath);
   slide.images.add({
     blob: screenshot,
     contentType: "image/png",
@@ -169,6 +170,9 @@ function addSlide7(presentation) {
 async function main() {
   await fs.mkdir(finalDir, { recursive: true });
   await fs.mkdir(stagingDir, { recursive: true });
+  // The browser smoke runner may refresh its captures. Freeze the exact input to
+  // this version before embedding it, so subsequent tests cannot alter provenance.
+  await fs.copyFile(screenshotPath, frozenScreenshotPath, (await import('node:fs')).constants.COPYFILE_EXCL);
   const presentation = Presentation.create({ slideSize: { width: 1280, height: 720 } });
   await addSlide6(presentation);
   addSlide7(presentation);
@@ -200,7 +204,7 @@ async function main() {
   for (const output of [finalPath, pdfPath, path.join(finalDir,`slides6_7_06_${version}.png`),path.join(finalDir,`slides6_7_07_${version}.png`)]) {
     const bytes=await fs.readFile(output); artifacts.push({path:path.relative(workspaceDir,output).replaceAll('\\','/'),bytes:bytes.length,sha256:sha256(bytes)});
   }
-  const record = {snapshot_id:report.snapshot_id,report_id:report.report_id,screenshot_path:path.relative(workspaceDir,screenshotPath).replaceAll('\\','/'),screenshot_sha256:sha256(await fs.readFile(screenshotPath)),editable_slides:2,pdf_type:'Raster preview of actual final PPTX renders; editable objects remain in PPTX',artifacts};
+  const record = {snapshot_id:report.snapshot_id,report_id:report.report_id,screenshot_path:path.relative(workspaceDir,frozenScreenshotPath).replaceAll('\\','/'),screenshot_sha256:sha256(await fs.readFile(frozenScreenshotPath)),editable_slides:2,pdf_type:'Raster preview of actual final PPTX renders; editable objects remain in PPTX',artifacts};
   await fs.writeFile(path.join(workspaceDir,'mvp/implementation/finalization/slides_manifest.json'),JSON.stringify(record,null,2)+'\n');
   console.log(JSON.stringify({slides:2,rendered:true,report_id:report.report_id,artifacts}));
 
