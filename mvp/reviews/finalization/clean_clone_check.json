@@ -1,0 +1,252 @@
+{
+  "implementation_sha": "7fe1ca8ffcd728378349e09cd716be9918182b5f",
+  "clone_path": "E:\\kase_case\\kase_case\\mvp\\local_validation\\final-clean-clone",
+  "fresh_venv": "E:\\kase_case\\kase_case\\mvp\\local_validation\\final-clean-clone\\mvp\\.venv\\Scripts\\python.exe",
+  "evidence_pack_sha256": "c893261e7787aaaa0ad10d2903db86d4dd7ab926ae47a53c591fdd746a1c84e1",
+  "results": [
+    {
+      "name": "missing_data_expected",
+      "command": [
+        "python",
+        "-c",
+        "from mvp.src.repository import load_snapshot; load_snapshot()"
+      ],
+      "started_at_utc": "2026-10-22T07:49:09.556933+00:00",
+      "finished_at_utc": "2026-10-22T07:49:09.697121+00:00",
+      "exit_code": 1,
+      "tests_run": null,
+      "skips": 0,
+      "log_path": "mvp/local_validation/finalization/clean-clone-7fe1ca8/missing_data_expected.log",
+      "log_sha256": "c11000b3caf015708e5723428ac2a2f061e329295a8f66b2a877c3c0698892c6",
+      "expected_failure": true
+    },
+    {
+      "name": "pip_check",
+      "command": [
+        "python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "started_at_utc": "2026-10-22T07:49:09.704113+00:00",
+      "finished_at_utc": "2026-10-22T07:49:11.098868+00:00",
+      "exit_code": 0,
+      "tests_run": null,
+      "skips": 0,
+      "log_path": "mvp/local_validation/finalization/clean-clone-7fe1ca8/pip_check.log",
+      "log_sha256": "672aec65a45bed50e70229c70934a7eebf0462595c459b83023027645d57cccf"
+    },
+    {
+      "name": "restore",
+      "command": [
+        "python",
+        "mvp/scripts/restore_evidence.py",
+        "E:\\kase_case\\kase_case\\mvp\\local_pack\\bondscope-evidence-final-20261022.zip"
+      ],
+      "started_at_utc": "2026-10-22T07:49:11.106436+00:00",
+      "finished_at_utc": "2026-10-22T07:49:11.952231+00:00",
+      "exit_code": 0,
+      "tests_run": null,
+      "skips": 0,
+      "log_path": "mvp/local_validation/finalization/clean-clone-7fe1ca8/restore.log",
+      "log_sha256": "f2b2a7f4b8428da7bc720ee2051d19164412f6fc12d5ab90493a25ef4f19f232",
+      "restore_result": {
+        "verified_files": 185,
+        "written_files": 185,
+        "snapshot_sha256": "40698bfc0c45347981e358e9fee4d80a88b8f90e8f3f27dd78182035bbddbc64",
+        "snapshot_id": "BS3-40698bfc0c453479"
+      }
+    },
+    {
+      "name": "snapshot",
+      "command": [
+        "python",
+        "-m",
+        "mvp.src.build_snapshot"
+      ],
+      "started_at_utc": "2026-10-22T07:49:11.959944+00:00",
+      "finished_at_utc": "2026-10-22T07:49:12.210307+00:00",
+      "exit_code": 0,
+      "tests_run": null,
+      "skips": 0,
+      "log_path": "mvp/local_validation/finalization/clean-clone-7fe1ca8/snapshot.log",
+      "log_sha256": "4c71b942662a1eb5045817abf212e545676d8cd1040411f8312fb1177f20767f"
+    },
+    {
+      "name": "default_report",
+      "command": [
+        "python",
+        "mvp/scripts/export_report.py"
+      ],
+      "started_at_utc": "2026-10-22T07:49:12.218826+00:00",
+      "finished_at_utc": "2026-10-22T07:49:12.445834+00:00",
+      "exit_code": 0,
+      "tests_run": null,
+      "skips": 0,
+      "log_path": "mvp/local_validation/finalization/clean-clone-7fe1ca8/default_report.log",
+      "log_sha256": "731219e94fc909e709f7ddcea6bfc265e16428fc6ed3ab64f8a1d80edf43b393"
+    },
+    {
+      "name": "demo_report",
+      "command": [
+        "python",
+        "mvp/scripts/export_report.py",
+        "--demo"
+      ],
+      "started_at_utc": "2026-10-22T07:49:12.455112+00:00",
+      "finished_at_utc": "2026-10-22T07:49:12.661564+00:00",
+      "exit_code": 0,
+      "tests_run": null,
+      "skips": 0,
+      "log_path": "mvp/local_validation/finalization/clean-clone-7fe1ca8/demo_report.log",
+      "log_sha256": "2d733567be19d0613972b92069b13cef112fef2792ae68cafd10ea423b5af72d"
+    },
+    {
+      "name": "unit_tests",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "mvp/tests",
+        "-v"
+      ],
+      "started_at_utc": "2026-10-22T07:49:12.671656+00:00",
+      "finished_at_utc": "2026-10-22T07:49:18.367812+00:00",
+      "exit_code": 0,
+      "tests_run": 53,
+      "skips": 0,
+      "log_path": "mvp/local_validation/finalization/clean-clone-7fe1ca8/unit_tests.log",
+      "log_sha256": "c74f217419e656f0299f4bf4e404821320ec16263af80723dc3bf73387fa2865"
+    },
+    {
+      "name": "archive_tests",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "mvp/data/raw/archive/verification/tests",
+        "-v"
+      ],
+      "started_at_utc": "2026-10-22T07:49:18.378804+00:00",
+      "finished_at_utc": "2026-10-22T07:49:18.593333+00:00",
+      "exit_code": 0,
+      "tests_run": 18,
+      "skips": 0,
+      "log_path": "mvp/local_validation/finalization/clean-clone-7fe1ca8/archive_tests.log",
+      "log_sha256": "52ac16faf8063823fab3e0a90b8737120c121f6933b22f23d8c1997e59dcf8fe"
+    },
+    {
+      "name": "ruff_F",
+      "command": [
+        "python",
+        "-m",
+        "ruff",
+        "check",
+        "mvp/src",
+        "mvp/tests",
+        "mvp/scripts",
+        "--select",
+        "F"
+      ],
+      "started_at_utc": "2026-10-22T07:49:18.601191+00:00",
+      "finished_at_utc": "2026-10-22T07:49:19.485294+00:00",
+      "exit_code": 0,
+      "tests_run": null,
+      "skips": 0,
+      "log_path": "mvp/local_validation/finalization/clean-clone-7fe1ca8/ruff_F.log",
+      "log_sha256": "a4443afdcfb6d7363adb285762515ccf7cf50473b1a05c20c1a50f6bed4d26b0"
+    },
+    {
+      "name": "source_reconciliation",
+      "command": [
+        "python",
+        "mvp/scripts/reconcile_sources.py"
+      ],
+      "started_at_utc": "2026-10-22T07:49:19.493309+00:00",
+      "finished_at_utc": "2026-10-22T07:49:19.713698+00:00",
+      "exit_code": 0,
+      "tests_run": null,
+      "skips": 0,
+      "log_path": "mvp/local_validation/finalization/clean-clone-7fe1ca8/source_reconciliation.log",
+      "log_sha256": "07e72a97d41d0499c5926310ed1993e26ab7e1223f211abd772c4a2d91974949"
+    },
+    {
+      "name": "finance",
+      "command": [
+        "python",
+        "-m",
+        "mvp.src.finance_validation"
+      ],
+      "started_at_utc": "2026-10-22T07:49:19.723616+00:00",
+      "finished_at_utc": "2026-10-22T07:49:19.829851+00:00",
+      "exit_code": 0,
+      "tests_run": null,
+      "skips": 0,
+      "log_path": "mvp/local_validation/finalization/clean-clone-7fe1ca8/finance.log",
+      "log_sha256": "c1d2afa36f91c2b610a217c07ee3d27317cba3cbb28999ab39e96cb73326f89d"
+    },
+    {
+      "name": "artifacts",
+      "command": [
+        "python",
+        "mvp/scripts/verify_final_artifacts.py"
+      ],
+      "started_at_utc": "2026-10-22T07:49:19.840436+00:00",
+      "finished_at_utc": "2026-10-22T07:49:20.660602+00:00",
+      "exit_code": 0,
+      "tests_run": null,
+      "skips": 0,
+      "log_path": "mvp/local_validation/finalization/clean-clone-7fe1ca8/artifacts.log",
+      "log_sha256": "acfe80d4fcc226873b0b18716228781c10016bfec9c2cbc36dd5d0c7ba601482"
+    }
+  ],
+  "byte_parity": [
+    {
+      "path": "mvp/data/processed/snapshot.json",
+      "sha256": "40698bfc0c45347981e358e9fee4d80a88b8f90e8f3f27dd78182035bbddbc64",
+      "equal": true
+    },
+    {
+      "path": "mvp/outputs/report.json",
+      "sha256": "e06d72b9aa268f921482a32018700c47600a610eb0cde5f086fbea5bdc9a004a",
+      "equal": true
+    },
+    {
+      "path": "mvp/outputs/mvp_results.csv",
+      "sha256": "3e6a7263df2fedc7a99fa4cf7f21edf87898d076bfd03b49ac91a84fb1882402",
+      "equal": true
+    },
+    {
+      "path": "mvp/outputs/report.html",
+      "sha256": "391fbe9ff530fb5e0097e31a4bdb1865b37ec8ce31907753071da734ae692bc9",
+      "equal": true
+    },
+    {
+      "path": "mvp/outputs/final/demo/report.json",
+      "sha256": "7e2183968b851755000bae28ed3283c3c82f5dfb6dbc9dd2b6b04455598acfe9",
+      "equal": true
+    },
+    {
+      "path": "mvp/outputs/final/demo/mvp_results.csv",
+      "sha256": "e00310f8c13853f8b6168f103504d7a5246a78cb9b556ffd31afffd56b65cef2",
+      "equal": true
+    },
+    {
+      "path": "mvp/outputs/final/demo/report.html",
+      "sha256": "338a28b8cd6c79149ad841900a0b57044ca18820e0ab7d60f4efa567fe4345c0",
+      "equal": true
+    }
+  ],
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "prefix": "E:\\kase_case\\kase_case\\mvp\\local_validation\\final-clean-clone\\mvp\\.venv",
+    "base_prefix": "C:\\Users\\kyrlu\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python"
+  },
+  "requirements_lock_sha256": "2a34da551feb3ef1be01422df7e8983572a8ff02ea1d4d4af3bb9ecd56d2e3f4",
+  "pass": true,
+  "browser_scope": "Fresh clone AppTest in unit suite; separate 12-case actual-browser run recorded in final_checks.json on same implementation SHA."
+}

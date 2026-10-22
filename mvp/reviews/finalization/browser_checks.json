@@ -1,0 +1,22 @@
+{
+  "started_at_utc": "2026-10-22T07:41:57.711166+00:00",
+  "url": "http://127.0.0.1:8501",
+  "offline_policy": "all non-localhost browser requests aborted",
+  "checks": [
+    "populated overview rendered at 1440px",
+    "initial state has no planned amount; separate software/data statuses visible",
+    "instrument card shows valuation and rule context",
+    "activity snapshot rendered without historical chart",
+    "21 October event context is empty and caveat rendered",
+    "future concept explicitly labeled",
+    "keyboard navigation lands on an interactive focus target",
+    "illustrative 100000 KZT input produces typed CSV/JSON parity for evaluations, events, and valuations",
+    "explicit preset, visible formula, HTML and CLI report all agree",
+    "zero planned input remains a real zero and changes result/export",
+    "event availability changes from absent on 21 October to loaded source-backed event on 22 October",
+    "responsive layouts captured at 1280px and 420px"
+  ],
+  "errors": [],
+  "demo_report_id": "BS3-REPORT-a9c167a239e236660e1a",
+  "finished_at_utc": "2026-10-22T07:42:14.321839+00:00"
+}

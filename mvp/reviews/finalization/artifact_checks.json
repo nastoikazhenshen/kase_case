@@ -1,0 +1,16 @@
+{
+  "verified_at_utc": "2026-10-22T07:42:42.148683+00:00",
+  "result": "PASS",
+  "report_id": "BS3-REPORT-a9c167a239e236660e1a",
+  "checks": [
+    "UI-linked preset JSON equals freshly built canonical report",
+    "CSV/JSON/HTML/XLSX values and gates agree",
+    "default XLSX planned amount remains blank",
+    "slide numerator/denominator/result and report identity agree",
+    "PPTX has exactly two editable slides and embeds verified screenshot",
+    "actual two-page PDF and PNG hashes verified",
+    "original and corrected finance workbook hashes match recorded provenance"
+  ],
+  "formal_rule": "planned_amount_to_observed_daily_turnover",
+  "slides_manifest_sha256": "3c8449290c999da04e480beecdd012abb6e3ab0dc7af4d1c3767a012fa1e914b"
+}

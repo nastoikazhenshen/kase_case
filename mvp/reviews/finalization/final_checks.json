@@ -1,0 +1,157 @@
+{
+  "implementation_sha": "7fe1ca8ffcd728378349e09cd716be9918182b5f",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "results": [
+    {
+      "command": [
+        "python",
+        "-m",
+        "mvp.src.build_snapshot"
+      ],
+      "started_at_utc": "2026-10-22T07:41:53.072720+00:00",
+      "finished_at_utc": "2026-10-22T07:41:53.219349+00:00",
+      "exit_code": 0,
+      "tests_run": null,
+      "skips": 0,
+      "log_path": "mvp/local_validation/finalization/7fe1ca8ffcd7-20261022T074153072720Z/check-01.log",
+      "log_sha256": "ba00a18b6554e15008a77c032ebe72294668929a14fb68bdcbd318bdc9ee9544"
+    },
+    {
+      "command": [
+        "python",
+        "mvp/scripts/export_report.py"
+      ],
+      "started_at_utc": "2026-10-22T07:41:53.219349+00:00",
+      "finished_at_utc": "2026-10-22T07:41:53.384781+00:00",
+      "exit_code": 0,
+      "tests_run": null,
+      "skips": 0,
+      "log_path": "mvp/local_validation/finalization/7fe1ca8ffcd7-20261022T074153072720Z/check-02.log",
+      "log_sha256": "1dcb7d1a93e32710b448521f74dc590c71caacf3a8b8ed53fdf0a764adf22466"
+    },
+    {
+      "command": [
+        "python",
+        "mvp/scripts/export_report.py",
+        "--demo"
+      ],
+      "started_at_utc": "2026-10-22T07:41:53.384781+00:00",
+      "finished_at_utc": "2026-10-22T07:41:53.537780+00:00",
+      "exit_code": 0,
+      "tests_run": null,
+      "skips": 0,
+      "log_path": "mvp/local_validation/finalization/7fe1ca8ffcd7-20261022T074153072720Z/check-03.log",
+      "log_sha256": "be519c7019f41e64ab267182626d587925cb5e441b88235ded092e5cc245eda2"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "mvp/tests",
+        "-v"
+      ],
+      "started_at_utc": "2026-10-22T07:41:53.537780+00:00",
+      "finished_at_utc": "2026-10-22T07:41:56.789139+00:00",
+      "exit_code": 0,
+      "tests_run": 53,
+      "skips": 0,
+      "log_path": "mvp/local_validation/finalization/7fe1ca8ffcd7-20261022T074153072720Z/check-04.log",
+      "log_sha256": "d264ed3e54e3a174fbb620e95db80ca7a49774aa555a43907a02fdd6f17d4424"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "mvp/data/raw/archive/verification/tests",
+        "-v"
+      ],
+      "started_at_utc": "2026-10-22T07:41:56.789139+00:00",
+      "finished_at_utc": "2026-10-22T07:41:56.981465+00:00",
+      "exit_code": 0,
+      "tests_run": 18,
+      "skips": 0,
+      "log_path": "mvp/local_validation/finalization/7fe1ca8ffcd7-20261022T074153072720Z/check-05.log",
+      "log_sha256": "3ca150cd56c27fbf056f06c44a203e7acd93c9a70bad26abc038ecc942ad9c0a"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "ruff",
+        "check",
+        "mvp/src",
+        "mvp/tests",
+        "mvp/scripts",
+        "--select",
+        "F"
+      ],
+      "started_at_utc": "2026-10-22T07:41:56.981465+00:00",
+      "finished_at_utc": "2026-10-22T07:41:57.146112+00:00",
+      "exit_code": 0,
+      "tests_run": null,
+      "skips": 0,
+      "log_path": "mvp/local_validation/finalization/7fe1ca8ffcd7-20261022T074153072720Z/check-06.log",
+      "log_sha256": "98733c3446b52dc3e6b6943142b19a142025d9727521f6abc3783a20e4b6d3c6"
+    },
+    {
+      "command": [
+        "python",
+        "mvp/scripts/reconcile_sources.py"
+      ],
+      "started_at_utc": "2026-10-22T07:41:57.146112+00:00",
+      "finished_at_utc": "2026-10-22T07:41:57.358677+00:00",
+      "exit_code": 0,
+      "tests_run": null,
+      "skips": 0,
+      "log_path": "mvp/local_validation/finalization/7fe1ca8ffcd7-20261022T074153072720Z/check-07.log",
+      "log_sha256": "7442601fedeaafcebb246217eae61c3809bb8344223258119ff05f9111bfbd91"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "mvp.src.finance_validation"
+      ],
+      "started_at_utc": "2026-10-22T07:41:57.358677+00:00",
+      "finished_at_utc": "2026-10-22T07:41:57.461320+00:00",
+      "exit_code": 0,
+      "tests_run": null,
+      "skips": 0,
+      "log_path": "mvp/local_validation/finalization/7fe1ca8ffcd7-20261022T074153072720Z/check-08.log",
+      "log_sha256": "add126f003bd5a71e2e87852d659f2e4e186d4eca48fb3fda7032eede5bf7480"
+    },
+    {
+      "command": [
+        "python",
+        "mvp/scripts/browser_smoke.py"
+      ],
+      "started_at_utc": "2026-10-22T07:41:57.461320+00:00",
+      "finished_at_utc": "2026-10-22T07:42:14.413570+00:00",
+      "exit_code": 0,
+      "tests_run": null,
+      "skips": 0,
+      "log_path": "mvp/local_validation/finalization/7fe1ca8ffcd7-20261022T074153072720Z/check-09.log",
+      "log_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "command": [
+        "python",
+        "mvp/scripts/verify_final_artifacts.py"
+      ],
+      "started_at_utc": "2026-10-22T07:42:14.413570+00:00",
+      "finished_at_utc": "2026-10-22T07:42:15.098020+00:00",
+      "exit_code": 0,
+      "tests_run": null,
+      "skips": 0,
+      "log_path": "mvp/local_validation/finalization/7fe1ca8ffcd7-20261022T074153072720Z/check-10.log",
+      "log_sha256": "4d7597fb7fc6551c64767eec6a471f06da48fa1647f74fd354ad05bb403465c9"
+    }
+  ],
+  "pass": true
+}

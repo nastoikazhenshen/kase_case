@@ -1,0 +1,204 @@
+{
+  "checked_at_utc": "2026-10-22T07:54:48.639033+00:00",
+  "base_release": "e18b97355511896cf037504919a5dd9f574512b3",
+  "tested_implementation_sha": "7fe1ca8ffcd728378349e09cd716be9918182b5f",
+  "scope": "All staged finalization files versus prior release; source/binary/runtime paths forbidden; this audit file is excluded from its own hash list.",
+  "checked_files": 48,
+  "secret_pattern_findings": 0,
+  "source_or_binary_files": 0,
+  "release_commit_documents_and_manifests_only": true,
+  "files": [
+    {
+      "path": "DECISIONS.md",
+      "index_sha256": "86489636506aff09ae6ba3e76d3c981f7b41916662d72d615cf2ef17108ff6e7"
+    },
+    {
+      "path": "HANDOFF.md",
+      "index_sha256": "d034f7dad3f444c971826b8fd67fc85e1e910e16d689976ee24b8667a02d4ff8"
+    },
+    {
+      "path": "OPEN_QUESTIONS.md",
+      "index_sha256": "e48b60470d693e3508217753ff87181006a1ef4b8542aed9957eefebf1ae7c17"
+    },
+    {
+      "path": "mvp/README.md",
+      "index_sha256": "7c8578ac4b6c9883620e4ba39f819d1949a39b1769f08f94266fc8bdaf4b1872"
+    },
+    {
+      "path": "mvp/README_run.md",
+      "index_sha256": "1c568fc2c3a13e2e14df31bb03bd99c38137a539cf9233da4e64ed9f6fcecfa0"
+    },
+    {
+      "path": "mvp/data/base_scenario.json",
+      "index_sha256": "378186a7bffac02ca09e9e834683748b88d66c912c8c1ff47fb29b249aa4e893"
+    },
+    {
+      "path": "mvp/data_availability_report.md",
+      "index_sha256": "f6a2adaec993a424be4938c349a0b38d93bf6b79d331b2606f04601d894fdc0d"
+    },
+    {
+      "path": "mvp/handoff/finance_consistency.md",
+      "index_sha256": "970bf2bc88ec8afffbff54ee240a1961e676c105756e2371f5d8cf9fb9c9ab75"
+    },
+    {
+      "path": "mvp/handoff/slides_6_7_notes.md",
+      "index_sha256": "6bb91fe994e0bf7efe9f9f890390b21b032a0e29647a6eb1a9348527be9df215"
+    },
+    {
+      "path": "mvp/handoff/technical_delivery.md",
+      "index_sha256": "b4c1aa6d14242e9b2b3c7c6963c4b7aa8bc50f458443e4a8137c89e723ec95f2"
+    },
+    {
+      "path": "mvp/implementation/finalization/acquisition/finalization_manifest.json",
+      "index_sha256": "e9700070e593fbd7182770494e26f9b73efc316b49506208c90f87ec3e8be2c5"
+    },
+    {
+      "path": "mvp/implementation/finalization/acquisition/finalization_report_ru.md",
+      "index_sha256": "e636254dcb01f3ece708d43eea8a85e090cf824202f7336cfadc26f92b734e4f"
+    },
+    {
+      "path": "mvp/implementation/finalization/finance_roundtrip_comparison.json",
+      "index_sha256": "e33d757a37a351c784c906600aed6385572862807b30f2d8c7d410f38cd7df6a"
+    },
+    {
+      "path": "mvp/implementation/finalization/finance_teammate_suggestions.md",
+      "index_sha256": "9001481f561397912770d6e6682a910c52193eb1488e6c9f055137a2acaf258e"
+    },
+    {
+      "path": "mvp/implementation/finalization/finance_validation_run.json",
+      "index_sha256": "0a8e24ac4f4653ea43fd21b3c31fcc8fd6714e5926ec035198f5bac190b84fa6"
+    },
+    {
+      "path": "mvp/implementation/finalization/finance_workbook_changes.json",
+      "index_sha256": "64cc247ce4854c156cf356b7a308011cac6b0132a68d5f7d91828118d36c50b9"
+    },
+    {
+      "path": "mvp/implementation/finalization/finance_workbook_run.json",
+      "index_sha256": "1a3f916abcfba4177ebddbc9c051b4f09cd68cdfe77f2d526fa5ff8b623233d2"
+    },
+    {
+      "path": "mvp/implementation/finalization/handoff_manifest.json",
+      "index_sha256": "23621a57e2786c198feeb4675d13beca91f42dce7ad50e5caf4f4e0a89a6e8c8"
+    },
+    {
+      "path": "mvp/implementation/finalization/local_pack_manifest.json",
+      "index_sha256": "94faedf06ae2160736e3a30b202c3287395650af3f401411c3ed87966b59765d"
+    },
+    {
+      "path": "mvp/implementation/finalization/runtime_recovery.md",
+      "index_sha256": "aeb5bf89146fc03b684ec2cb179c5f065592aa554a315b3d82beedc8e618087f"
+    },
+    {
+      "path": "mvp/implementation/finalization/slides_6_7_record.md",
+      "index_sha256": "45f9095c3a615283469e4500764ecb760d2a4d040a492efc37c46155b11b3997"
+    },
+    {
+      "path": "mvp/implementation/finalization/slides_manifest.json",
+      "index_sha256": "3c8449290c999da04e480beecdd012abb6e3ab0dc7af4d1c3767a012fa1e914b"
+    },
+    {
+      "path": "mvp/reviews/final_report_ru.md",
+      "index_sha256": "f7f9ff9c99f0358401cd98e6c55fcf16c51145dfcbe946421f9d98ed7dba6d51"
+    },
+    {
+      "path": "mvp/reviews/finalization/adversarial_review.md",
+      "index_sha256": "81000eea99fbcfcb30cd587e2581b665fb5c355f9a1a44cbef76270943232f9f"
+    },
+    {
+      "path": "mvp/reviews/finalization/agent_manifest.json",
+      "index_sha256": "b93fce13288327db429b6c5c1bd974ed5ca9fc015691d75a1ac8a0fbdddf5660"
+    },
+    {
+      "path": "mvp/reviews/finalization/artifact_checks.json",
+      "index_sha256": "d70676fcf60124a88d7eaeff7cff8b97993830a76f0e971c94df924adb5bb0e4"
+    },
+    {
+      "path": "mvp/reviews/finalization/attempt_bfc19df.json",
+      "index_sha256": "08e2aeedff335cdeff401931432b9e8ba47d680f185b655fad945ff51bc4c6da"
+    },
+    {
+      "path": "mvp/reviews/finalization/browser_checks.json",
+      "index_sha256": "64f3e7453b7eb3205837dd4e9f3abda27bef3a54b1ad8257f2855939eac873cd"
+    },
+    {
+      "path": "mvp/reviews/finalization/clean_clone_check.json",
+      "index_sha256": "e4a768583f58ac20246f27c08e16c2b7d6bbbef4f92cd1267dc59def29d89bd6"
+    },
+    {
+      "path": "mvp/reviews/finalization/final_checks.json",
+      "index_sha256": "1ae300c97bb24864cf39cfa067a0a5c771cad100e1699fa25879c5647bba8d09"
+    },
+    {
+      "path": "mvp/reviews/finalization/remediation.md",
+      "index_sha256": "0f3cdf43374311c61025996dc78b007d9d604f43ce92d627b15b939e9e7858e8"
+    },
+    {
+      "path": "mvp/reviews/finalization/staged_audit.json",
+      "index_sha256": "f25016950d51d2facc429867062a5cbdaa244b14d71b3ad0906637f0d611f762"
+    },
+    {
+      "path": "mvp/scripts/browser_smoke.py",
+      "index_sha256": "5df04ac7f91ba43b92c6fbb30d29e21311fef16fd2d992bd637c3d9f6aa93a24"
+    },
+    {
+      "path": "mvp/scripts/build_slides.mjs",
+      "index_sha256": "43603eb6f09f5a28d6c631269885b7e3b55d293ce6dfea05ca4e244c156b9b62"
+    },
+    {
+      "path": "mvp/scripts/build_workbook.mjs",
+      "index_sha256": "8eb2127818cf89771cbc4171e39e79c74d7efb3e9721ff772c39bf572101a3c8"
+    },
+    {
+      "path": "mvp/scripts/export_report.py",
+      "index_sha256": "57d13752e5e5e88aef19f31f6a458ecdbd7485840dee129bf5b0ebff23177766"
+    },
+    {
+      "path": "mvp/scripts/final_checks.py",
+      "index_sha256": "48e2172b6da3a4b86987cfb63ea958975debb2f65253d2af2ac6fc2241a802d5"
+    },
+    {
+      "path": "mvp/scripts/finalize_finance.mjs",
+      "index_sha256": "4a1fb54d49d7226f6bd5296d212ecc8ea02da7b9bd57b1a95c4ba278e21b328d"
+    },
+    {
+      "path": "mvp/scripts/package_evidence.py",
+      "index_sha256": "9e210f037b72410ee6dc3a00616e29b2c53700f674cf2ba5700c0fe449348ebd"
+    },
+    {
+      "path": "mvp/scripts/package_handoff.py",
+      "index_sha256": "1c967b794ba3074eda70e5517742257728101eb26cd9e537f585f1a5b72fefa7"
+    },
+    {
+      "path": "mvp/scripts/verify_final_artifacts.py",
+      "index_sha256": "76e0e13539a18a67528b520bfd2dfd0aed51729f98e35a4152bcf3f139f353e2"
+    },
+    {
+      "path": "mvp/slides_mvp.md",
+      "index_sha256": "b02bfa58645f8dc605b467607c7fe28047d5c8dab37b68dd33612198f2170dca"
+    },
+    {
+      "path": "mvp/src/app.py",
+      "index_sha256": "36d4a0c352646afb02744ed847baf17c66e55d57654022bfcc405c6168a53bb6"
+    },
+    {
+      "path": "mvp/src/demo.py",
+      "index_sha256": "9d38928570887bdaa6d9506fa629aa511f2782fdbccf4631a4f857b711d6849f"
+    },
+    {
+      "path": "mvp/src/finance_validation.py",
+      "index_sha256": "516aef6b62064033abc5723302a8114c60202a9ab39fd1e7b6cf9d7fee0ecc6a"
+    },
+    {
+      "path": "mvp/src/reports.py",
+      "index_sha256": "c13c1f94ac024e39b37b3a6450dc97c0ac852e8686fee8b6dd4dd60ccaa1d48a"
+    },
+    {
+      "path": "mvp/tests/test_demo.py",
+      "index_sha256": "79aa9de46c1ee4844470c0a1e5b1b3fb921bfb86901a1ca4416710c4d0a08651"
+    },
+    {
+      "path": "mvp/tests/test_finance.py",
+      "index_sha256": "aeafc85d36d26ea35534fc2d0be7ad7fc9163e937a23051fbfd414e54f072609"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "file": "mvp/local_pack/BondScope_Participant2_Final_20261022.zip",
+  "bytes": 7404669,
+  "sha256": "6674530a68576a430ab0278de8c87b058f1b68517ed9795add7327d8f89ac9dd",
+  "file_count": 29,
+  "implementation_sha": "7fe1ca8ffcd728378349e09cd716be9918182b5f",
+  "evidence_pack_sha256": "c893261e7787aaaa0ad10d2903db86d4dd7ab926ae47a53c591fdd746a1c84e1",
+  "nested_archives": [
+    "mvp/local_pack/bondscope-evidence-final-20261022.zip"
+  ],
+  "recursive_archive_inclusion": false,
+  "delivery": "LOCAL_ONLY_NOT_IN_PUBLIC_GIT"
+}
