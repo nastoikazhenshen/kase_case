@@ -45,6 +45,7 @@ def main():
         print(json.dumps(result), flush=True)
     output = {"implementation_sha": sha, "python": sys.version, "results": results,
               "pass": all(row["exit_code"] == 0 and row["skips"] == 0 for row in results)}
+    (ROOT / "mvp/reviews/finalization").mkdir(exist_ok=True, parents=True)
     (ROOT / "mvp/reviews/finalization/final_checks.json").write_text(json.dumps(output, indent=2) + "\n", encoding="utf8")
     return 0 if output["pass"] else 1
 

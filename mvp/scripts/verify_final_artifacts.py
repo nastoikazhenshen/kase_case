@@ -88,6 +88,7 @@ def main():
                          "PPTX has exactly two editable slides and embeds verified screenshot", "actual two-page PDF and PNG hashes verified",
                          "original and corrected finance workbook hashes match recorded provenance"],
               "formal_rule": DEMO_RULE, "slides_manifest_sha256": digest(ROOT / "implementation/finalization/slides_manifest.json")}
+    (ROOT / "reviews/finalization").mkdir(exist_ok=True, parents=True)
     (ROOT / "reviews/finalization/artifact_checks.json").write_text(json.dumps(checks, ensure_ascii=False, indent=2) + "\n", encoding="utf8")
     print(json.dumps(checks, ensure_ascii=False))
 
